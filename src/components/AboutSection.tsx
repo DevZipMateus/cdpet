@@ -1,19 +1,8 @@
-
 import { CheckCircle } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
-
 const AboutSection = () => {
-  const features = [
-    'Sem taxa mínima de trabalho',
-    'Sem compras altas ou casadas',
-    'Lucratividade acima de 120%',
-    'Preços competitivos de SP',
-    'Atendimento humanizado',
-    'Agilidade na entrega'
-  ];
-
-  return (
-    <section id="sobre" className="py-24 bg-white">
+  const features = ['Sem taxa mínima de trabalho', 'Sem compras altas ou casadas', 'Lucratividade acima de 120%', 'Preços competitivos de SP', 'Atendimento humanizado', 'Agilidade na entrega'];
+  return <section id="sobre" className="py-24 bg-white">
       <div className="section-container">
         <AnimatedSection>
           <h2 className="section-title">Nossa História</h2>
@@ -26,11 +15,7 @@ const AboutSection = () => {
           <AnimatedSection animation="slide-in-left">
             <div className="relative">
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" 
-                  alt="Distribuição Pet Shop" 
-                  className="w-full h-auto object-cover"
-                />
+                <img alt="Distribuição Pet Shop" className="w-full h-auto object-cover" src="/lovable-uploads/c49a9673-237c-43b0-bbd9-63495ed25990.png" />
               </div>
               
               <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-accent/10 rounded-full z-0"></div>
@@ -54,27 +39,18 @@ const AboutSection = () => {
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4">
-              {features.map((feature) => (
-                <div key={feature} className="flex items-center gap-2">
+              {features.map(feature => <div key={feature} className="flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
                   <span className="text-gray-700">{feature}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
             
-            <a 
-              href="https://wa.me/5561999822328" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary inline-block mt-4"
-            >
+            <a href="https://wa.me/5561999822328" target="_blank" rel="noopener noreferrer" className="btn-primary inline-block mt-4">
               Fale com nosso time
             </a>
           </AnimatedSection>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
