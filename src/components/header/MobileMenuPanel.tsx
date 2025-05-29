@@ -20,7 +20,13 @@ const MobileMenuPanel = ({ isMenuOpen, onClose, menuItems }: MobileMenuPanelProp
     >
       {/* Menu Header */}
       <div className="flex items-center justify-between p-6 border-b">
-        <div className="text-2xl font-bold text-primary">Contabilify</div>
+        <div className="flex items-center">
+          <img 
+            src="/lovable-uploads/e2f5f030-4382-43df-96ad-e3613c13ed0b.png" 
+            alt="CD PET Express" 
+            className="h-8"
+          />
+        </div>
         <button 
           onClick={onClose}
           className="p-2 rounded-full hover:bg-gray-100 text-gray-500"
@@ -51,11 +57,20 @@ const MobileMenuPanel = ({ isMenuOpen, onClose, menuItems }: MobileMenuPanelProp
         <div className="mt-12 pt-8 border-t border-gray-100">
           <p className="text-md text-gray-500 mb-3">Entre em contato conosco</p>
           <a 
-            href="tel:+5500999999999" 
-            className="text-xl text-primary hover:text-primary/80 font-medium block py-2
+            href="https://wa.me/5561999822328" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xl text-green-600 hover:text-green-700 font-medium block py-2
                        transition-all duration-200 hover:translate-x-1 hover:scale-[1.02]"
           >
-            (00) 99999-9999
+            (61) 99982-2328
+          </a>
+          <a 
+            href="mailto:cdpetdf@gmail.com"
+            className="text-lg text-primary hover:text-primary/80 font-medium block py-1
+                       transition-all duration-200 hover:translate-x-1 hover:scale-[1.02]"
+          >
+            cdpetdf@gmail.com
           </a>
         </div>
       </nav>

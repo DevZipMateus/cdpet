@@ -1,39 +1,39 @@
 
-import { Calculator, BarChart3, FileText, Users, PieChart, Building } from 'lucide-react';
+import { Truck, DollarSign, Package, Users, MapPin, Heart } from 'lucide-react';
 import ServiceCard from './ServiceCard';
 import AnimatedSection from './AnimatedSection';
 
 const ServicesSection = () => {
   const services = [
     {
-      icon: Calculator,
-      title: 'Contabilidade',
-      description: 'Serviços completos de contabilidade para empresas de todos os portes, com demonstrativos claros e precisos.'
+      icon: Package,
+      title: 'Distribuição Inteligente',
+      description: 'Produtos de qualidade com curadoria especializada, focando apenas no que realmente vende no seu pet shop.'
     },
     {
-      icon: BarChart3,
-      title: 'Fiscal',
-      description: 'Gerenciamento de obrigações fiscais, apuração de impostos e planejamento tributário para otimizar a carga fiscal.'
+      icon: DollarSign,
+      title: 'Margens Superiores',
+      description: 'Garantimos margens líquidas acima de 120% para nossos parceiros, com preços competitivos como os de São Paulo.'
     },
     {
-      icon: FileText,
-      title: 'Departamento Pessoal',
-      description: 'Gestão completa da folha de pagamento, admissões, demissões e todas as rotinas trabalhistas.'
-    },
-    {
-      icon: Building,
-      title: 'Abertura de Empresa',
-      description: 'Auxílio completo na abertura, alteração ou encerramento de empresas, com agilidade e segurança.'
-    },
-    {
-      icon: PieChart,
-      title: 'Consultoria Empresarial',
-      description: 'Análise financeira, planejamento estratégico e apoio na tomada de decisões para o crescimento do seu negócio.'
+      icon: Truck,
+      title: 'Entrega Ágil',
+      description: 'Logística eficiente para Brasília e regiões, com frete FOB a partir de R$ 168,00 e entrega programada.'
     },
     {
       icon: Users,
-      title: 'Societário',
-      description: 'Elaboração e alteração de contratos sociais, atas e documentos societários conforme a legislação vigente.'
+      title: 'Atendimento Personalizado',
+      description: 'Relacionamento próximo e humanizado, respeitando o ritmo e necessidade de cada cliente parceiro.'
+    },
+    {
+      icon: MapPin,
+      title: 'Cobertura Regional',
+      description: 'Atendemos Brasília, Bahia, Goiânia, Goiás, Piauí, Rondônia e expandindo para mais estados.'
+    },
+    {
+      icon: Heart,
+      title: 'Parceria Verdadeira',
+      description: 'Sem taxas mínimas, sem compras casadas. Crescemos juntos, oferecendo suporte e confiança contínua.'
     }
   ];
 
@@ -41,9 +41,9 @@ const ServicesSection = () => {
     <section id="serviços" className="py-24 bg-gradient-to-b from-blue-50 to-white">
       <div className="section-container">
         <AnimatedSection>
-          <h2 className="section-title">Nossos Serviços</h2>
+          <h2 className="section-title">Nossos Diferenciais</h2>
           <p className="section-subtitle">
-            Oferecemos soluções completas para atender todas as necessidades da sua empresa
+            Descubra por que somos a melhor escolha para o abastecimento do seu pet shop
           </p>
         </AnimatedSection>
 
@@ -64,8 +64,13 @@ const ServicesSection = () => {
         </div>
 
         <AnimatedSection className="text-center mt-16">
-          <a href="#contato" className="btn-primary inline-block">
-            Solicite um orçamento
+          <a 
+            href="https://wa.me/5561999822328" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-accent inline-block"
+          >
+            Solicite seu orçamento personalizado
           </a>
         </AnimatedSection>
       </div>

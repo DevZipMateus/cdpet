@@ -1,7 +1,6 @@
 
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, MessageCircle } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
-import { cn } from '@/lib/utils';
 
 const ContactSection = () => {
   return (
@@ -10,7 +9,7 @@ const ContactSection = () => {
         <AnimatedSection>
           <h2 className="section-title">Entre em Contato</h2>
           <p className="section-subtitle">
-            Estamos prontos para atender suas necessidades e responder suas dúvidas
+            Estamos prontos para ser seu parceiro de negócios e responder todas suas dúvidas
           </p>
         </AnimatedSection>
 
@@ -20,15 +19,22 @@ const ContactSection = () => {
               <h3 className="text-xl sm:text-2xl font-bold mb-6 text-primary">Informações de Contato</h3>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* Telefone */}
+                {/* WhatsApp */}
                 <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                    <Phone className="h-5 w-5 text-primary" />
+                  <div className="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-1">
+                    <MessageCircle className="h-5 w-5 text-green-600" />
                   </div>
                   <div className="ml-3">
-                    <h4 className="text-base font-medium">Telefone</h4>
-                    <p className="text-sm text-gray-600">(11) 5555-5555</p>
-                    <p className="text-sm text-gray-600">(11) 98765-4321</p>
+                    <h4 className="text-base font-medium">WhatsApp</h4>
+                    <a 
+                      href="https://wa.me/5561999822328" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-green-600 hover:text-green-700 transition-colors"
+                    >
+                      (61) 99982-2328
+                    </a>
+                    <p className="text-sm text-gray-600">Atendimento rápido</p>
                   </div>
                 </div>
                 
@@ -39,8 +45,13 @@ const ContactSection = () => {
                   </div>
                   <div className="ml-3">
                     <h4 className="text-base font-medium">E-mail</h4>
-                    <p className="text-sm text-gray-600 break-words">contato@contabilify.com.br</p>
-                    <p className="text-sm text-gray-600 break-words">atendimento@contabilify.com.br</p>
+                    <a 
+                      href="mailto:cdpetdf@gmail.com"
+                      className="text-sm text-primary hover:text-primary/80 transition-colors break-words"
+                    >
+                      cdpetdf@gmail.com
+                    </a>
+                    <p className="text-sm text-gray-600">Comercial e suporte</p>
                   </div>
                 </div>
                 
@@ -51,16 +62,34 @@ const ContactSection = () => {
                   </div>
                   <div className="ml-3">
                     <h4 className="text-base font-medium">Endereço</h4>
-                    <p className="text-sm text-gray-600">Av. Paulista, 1000 - Bela Vista</p>
-                    <p className="text-sm text-gray-600">São Paulo - SP, 01310-000</p>
+                    <p className="text-sm text-gray-600">Via Marginal Estrutural, 142</p>
+                    <p className="text-sm text-gray-600">Vicente Pires - Brasília/DF</p>
+                    <a 
+                      href="https://www.google.com/maps/dir//Rua+12,+St.+Hab.+Vicente+Pires+Vicente+Pires,+Bras%C3%ADlia+-+DF,+72007-605/@-15.7913144,-48.1128238,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x935a33201265e36d:0xc32ca6bbc76b8a06!2m2!1d-48.030422!2d-15.7913299?entry=ttu&g_ep=EgoyMDI1MDUyNy4wIKXMDSoASAFQAw%3D%3D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-primary hover:text-primary/80 transition-colors"
+                    >
+                      Ver no Mapa
+                    </a>
                   </div>
                 </div>
               </div>
               
-              <div className="mt-6 p-4 bg-secondary/20 rounded-lg">
-                <h4 className="text-lg font-medium mb-2">Horário de Atendimento</h4>
-                <p className="text-gray-600 text-sm">Segunda a Sexta: 9h às 18h</p>
-                <p className="text-gray-600 text-sm">Sábados: 9h às 13h</p>
+              <div className="mt-6 p-4 bg-gradient-to-r from-accent/5 to-primary/5 rounded-lg">
+                <h4 className="text-lg font-medium mb-2 flex items-center gap-2">
+                  <Instagram className="h-5 w-5 text-accent" />
+                  Siga-nos no Instagram
+                </h4>
+                <a 
+                  href="https://instagram.com/cdpetdf" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:text-accent/80 transition-colors text-sm"
+                >
+                  @cdpetdf
+                </a>
+                <p className="text-gray-600 text-sm mt-1">Acompanhe nossas novidades e promoções</p>
               </div>
             </div>
           </AnimatedSection>

@@ -8,6 +8,7 @@ import PlansSection from '@/components/PlansSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import WhatsAppFloat from '@/components/WhatsAppFloat';
 
 const Index = () => {
   useEffect(() => {
@@ -51,6 +52,7 @@ const Index = () => {
         <ContactSection />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };

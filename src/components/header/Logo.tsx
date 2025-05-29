@@ -8,15 +8,14 @@ interface LogoProps {
 const Logo = ({ scrolled }: LogoProps) => {
   return (
     <a href="#" className="flex items-center z-10 relative">
-      <div
+      <img 
+        src="/lovable-uploads/e2f5f030-4382-43df-96ad-e3613c13ed0b.png" 
+        alt="CD PET Express" 
         className={cn(
-          "text-3xl font-bold transition-all duration-300",
-          scrolled ? "text-primary" : "text-primary",
-          "hover:scale-105"
+          "transition-all duration-300 hover:scale-105",
+          scrolled ? "h-12" : "h-14"
         )}
-      >
-        Contabilify
-      </div>
+      />
     </a>
   );
 };

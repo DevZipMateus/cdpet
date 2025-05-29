@@ -4,22 +4,22 @@ import AnimatedSection from './AnimatedSection';
 
 const PlansSection = () => {
   const plans = [{
-    title: "MEI",
-    price: "R$199",
-    description: "Ideal para Microempreendedores Individuais",
-    features: ["Declaração Anual (DASN-SIMEI)", "Emissão de guias (DAS)", "Suporte básico por e-mail", "Orientação fiscal"],
+    title: "Retirada/FOB",
+    price: "R$168",
+    description: "Ideal para quem pode retirar no CD ou possui frete próprio",
+    features: ["Compra mínima R$ 168,00", "Retirada no centro de distribuição", "Frete por conta do cliente", "Preços especiais para volume", "Atendimento personalizado"],
     isPopular: false
   }, {
-    title: "Essencial",
-    price: "R$399",
-    description: "Perfeito para pequenas empresas",
-    features: ["Contabilidade completa", "Apuração de impostos", "Folha de pagamento (até 5 funcionários)", "Suporte por telefone e e-mail", "Relatórios trimestrais"],
+    title: "Brasília e Região",
+    price: "R$444",
+    description: "Perfeito para pet shops em Brasília e entorno",
+    features: ["Compra mínima R$ 444,00", "Frete incluso para Brasília", "Entrega programada", "Atendimento via WhatsApp", "Margem garantida 120%+", "Produtos selecionados"],
     isPopular: true
   }, {
-    title: "Empresarial",
-    price: "R$799",
-    description: "Para empresas em crescimento",
-    features: ["Contabilidade completa", "Planejamento tributário", "Folha de pagamento (até 15 funcionários)", "Consultoria mensal", "Relatórios gerenciais mensais", "Atendimento prioritário"],
+    title: "Demais Estados",
+    price: "R$888",
+    description: "Para pet shops em Bahia, Goiânia, Goiás, Piauí, Rondônia",
+    features: ["Compra mínima R$ 888,00", "Frete incluso", "Cobertura ampla", "Logística especializada", "Preços competitivos", "Suporte completo", "Consultoria comercial"],
     isPopular: false
   }];
 
@@ -29,7 +29,7 @@ const PlansSection = () => {
         <AnimatedSection>
           <h2 className="section-title">Nossos Planos</h2>
           <p className="section-subtitle">
-            Escolha o plano que melhor se adapta às necessidades da sua empresa
+            Escolha a opção que melhor se adapta à localização e necessidades do seu pet shop
           </p>
         </AnimatedSection>
 
@@ -47,14 +47,19 @@ const PlansSection = () => {
           ))}
         </div>
 
-        <AnimatedSection className="mt-16 text-center bg-gray-50 rounded-xl p-8">
-          <h3 className="text-xl font-bold mb-3">Precisa de um plano personalizado?</h3>
+        <AnimatedSection className="mt-16 text-center bg-gradient-to-r from-accent/5 to-primary/5 rounded-xl p-8">
+          <h3 className="text-xl font-bold mb-3">Precisa de condições especiais?</h3>
           <p className="text-gray-600 mb-6">
-            Oferecemos planos personalizados para empresas com necessidades específicas. 
-            Entre em contato conosco para uma proposta sob medida.
+            Oferecemos condições personalizadas para pet shops com necessidades específicas. 
+            Entre em contato conosco via WhatsApp para uma proposta sob medida.
           </p>
-          <a href="#contato" className="btn-primary inline-block">
-            Solicitar Plano Personalizado
+          <a 
+            href="https://wa.me/5561999822328" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-accent inline-block"
+          >
+            Falar com Especialista
           </a>
         </AnimatedSection>
       </div>

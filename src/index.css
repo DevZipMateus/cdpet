@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,17 +16,17 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    /* Primary color (60%) */
-    --primary: 215 60% 45%;
+    /* Primary color - Azul da logo */
+    --primary: 211 80% 35%;
     --primary-foreground: 210 40% 98%;
 
-    /* Secondary color (30%) */
-    --secondary: 200 30% 80%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary color - Azul mais claro */
+    --secondary: 211 50% 85%;
+    --secondary-foreground: 211 80% 25%;
 
-    /* Accent color (10%) */
-    --accent: 25 100% 55%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent color - Laranja da logo */
+    --accent: 18 95% 55%;
+    --accent-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -54,10 +54,16 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Poppins', system-ui, sans-serif;
   }
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
   }
 }
 
@@ -71,7 +77,6 @@
     @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-md;
   }
 
-  /* Reduced vertical spacing */
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16;
   }
@@ -82,7 +87,7 @@
 
   .section-title::after {
     content: "";
-    @apply absolute w-20 h-1 bg-primary left-1/2 -translate-x-1/2 bottom-0 mt-4;
+    @apply absolute w-20 h-1 bg-accent left-1/2 -translate-x-1/2 bottom-0 mt-4;
     bottom: -0.75rem;
   }
 
@@ -111,5 +116,9 @@
   .is-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  .whatsapp-float {
+    @apply fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110;
   }
 }
