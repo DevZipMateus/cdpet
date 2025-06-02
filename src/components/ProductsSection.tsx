@@ -1,4 +1,3 @@
-
 import AnimatedSection from './AnimatedSection';
 import ProductSection from './ProductSection';
 
@@ -40,19 +39,19 @@ const ProductsSection = () => {
     { name: "BOBY DOG SHAMPOO RAÇA LABRADOR / GOLDEN 500ML", price: "12,99", image: "SH_BOBY_RACAS_LABRA_GOLDEN_500ML.png", folder: "Raca" },
   ];
 
-  const treatmentProducts = [
-    { name: "BOBY DOG SHAMPOO PELAGEM ESCURA 750ML", price: "12,99", image: "Pelagem Escura.png", folder: "tratamento" },
-    { name: "BOBY DOG SHAMPOO NEUTRO 750ML", price: "12,99", image: "Neutro.png", folder: "tratamento" },
-    { name: "BOBY DOG SHAMPOO FILHOTES 750ML", price: "12,99", image: "Filhotes.png", folder: "tratamento" },
-    { name: "BOBY DOG SHAMPOO CLAREADOR 750ML", price: "12,99", image: "Clareador.png", folder: "tratamento" },
-    { name: "BOBY DOG SHAMPOO COCO 750ML", price: "12,99", image: "Coco.png", folder: "tratamento" },
+  const soapAndTalcProducts = [
+    { name: "BOBY DOG SABONETE PELAGEM ESCURA 80G", price: "12,99", image: "Pelagem Escura.png", folder: "tratamento" },
+    { name: "BOBY DOG SABONETE NEUTRO 80G", price: "12,99", image: "Neutro.png", folder: "tratamento" },
+    { name: "BOBY DOG SABONETE FILHOTES 80G", price: "12,99", image: "Filhotes.png", folder: "tratamento" },
+    { name: "BOBY DOG SABONETE CLAREADOR 80G", price: "12,99", image: "Clareador.png", folder: "tratamento" },
+    { name: "BOBY DOG SABONETE COCO 80G", price: "12,99", image: "Coco.png", folder: "tratamento" },
     { name: "BOBY DOG SABONETE ENXOFRE 80G", price: "11,99", image: "Enxofre.png", folder: "tratamento" },
-    { name: "BOBY DOG SHAMPOO HIPOALERGÊNICO 750ML", price: "12,99", image: "Hipoalergênico.png", folder: "tratamento" },
-    { name: "BOBY DOG SHAMPOO SUAVE 500ML", price: "12,99", image: "Suave.png", folder: "tratamento" },
-    { name: "BOBY DOG TALCO BANHO A SECO", price: "11,99", image: "Talco BOBY DOG BANHO A SECO.png", folder: "tratamento" },
-    { name: "BOBY DOG TALCO ERVA SANTA MARIA", price: "11,99", image: "Talco BOBY DOG ERVA SANTA MARIA.png", folder: "tratamento" },
-    { name: "BOBY DOG TALCO HIPOALERGÊNICO", price: "11,99", image: "Talco BOBY DOG HIPOALERGENICO.png", folder: "tratamento" },
-    { name: "BOBY CAT TALCO ERVA SANTA MARIA 100GR", price: "11,99", image: "Talco BOBY CAT ERVA SANTA MARIA.png", folder: "tratamento" },
+    { name: "BOBY DOG SABONETE HIPOALERGÊNICO 80G", price: "12,99", image: "Hipoalergênico.png", folder: "tratamento" },
+    { name: "BOBY DOG SABONETE SUAVE 80G", price: "12,99", image: "Suave.png", folder: "tratamento" },
+    { name: "BOBY DOG TALCO BANHO A SECO 100G", price: "11,99", image: "Talco BOBY DOG BANHO A SECO.png", folder: "tratamento" },
+    { name: "BOBY DOG TALCO ERVA SANTA MARIA 100G", price: "11,99", image: "Talco BOBY DOG ERVA SANTA MARIA.png", folder: "tratamento" },
+    { name: "BOBY DOG TALCO HIPOALERGÊNICO 100G", price: "11,99", image: "Talco BOBY DOG HIPOALERGENICO.png", folder: "tratamento" },
+    { name: "BOBY CAT TALCO ERVA SANTA MARIA 100G", price: "11,99", image: "Talco BOBY CAT ERVA SANTA MARIA.png", folder: "tratamento" },
   ];
 
   const conditioners = [
@@ -92,8 +91,8 @@ const ProductsSection = () => {
           />
 
           <ProductSection 
-            title="Shampoos e Produtos de Tratamento"
-            products={treatmentProducts}
+            title="Sabonetes e talcos"
+            products={soapAndTalcProducts}
           />
           
           <ProductSection 
