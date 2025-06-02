@@ -1,4 +1,3 @@
-
 import { Truck, DollarSign, Package, Users, MapPin, Heart } from 'lucide-react';
 import ServiceCard from './ServiceCard';
 import AnimatedSection from './AnimatedSection';
@@ -28,7 +27,7 @@ const ServicesSection = () => {
     {
       icon: MapPin,
       title: 'Cobertura Regional',
-      description: 'Atendemos Brasília, Bahia, Goiânia, Goiás, Piauí, Rondônia e expandindo para mais estados.'
+      description: 'Atendemos Brasília, Bahia, Goiânia, Goiás, São Paulo, Piauí e DF, expandindo para mais estados.'
     },
     {
       icon: Heart,
