@@ -11,10 +11,12 @@ interface ProductCardProps {
 const ProductCard = ({ name, price, image, folder = "shampoo" }: ProductCardProps) => {
   const isVegan = folder === "vegano";
   const isRace = folder === "Raca";
+  const isLancamentos = folder === "lancamentos";
   
   const getVolume = () => {
     if (isVegan) return "500ml";
     if (isRace) return "500ml";
+    if (isLancamentos) return "750ml";
     return "750ml";
   };
   

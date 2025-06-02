@@ -12,14 +12,14 @@ const ProductsSection = () => {
     { name: "BOBY DOG SHAMPOO NEUTRO 750ML", price: "12,99", image: "Shampoo 750 ml BOBY DOG NEUTRO.png" },
     { name: "BOBY DOG SHAMPOO PELAGEM ESCURA 750ML", price: "12,99", image: "Shampoo 750 ml BOBY DOG PELAGEM ESCURA.png" },
     { name: "BOBY DOG SHAMPOO SUAVE 750ML", price: "12,99", image: "Shampoo 750 ml BOBY DOG SUAVE.png" },
-    { name: "BOBY DOG SHAMPOO PELOS CURTOS 750ML", price: "12,99", image: "SH_BOBY_PELOS_CURTOS_750ML.png" },
-    { name: "BOBY DOG SHAMPOO PELOS LONGOS 750ML", price: "12,99", image: "SH_BOBY_PELOS_LONGOS_750ML.png" },
   ];
 
-  const functionalShampoos = [
-    { name: "BOBY DOG SHAMPOO ANTI-QUEDA 750ML", price: "12,99", image: "SH_BOBY_ANT_QUEDAS_750ML.png" },
-    { name: "BOBY DOG SHAMPOO NEUTRALIZADOR DE ODORES 750ML", price: "12,99", image: "SH_BOBY_NEUTRA_ODORES_750ML.png" },
-    { name: "BOBY DOG SHAMPOO ALOE VERA + HAMAMELIS 750ML", price: "12,99", image: "SH_BOBY_ALOEVERA_HAMA_750ML.png" },
+  const specialShampoos = [
+    { name: "BOBY DOG SHAMPOO ALOE VERA + HAMAMELIS 750ML", price: "12,99", image: "SH_BOBY_ALOEVERA_HAMA_750ML.png", folder: "lancamentos" },
+    { name: "BOBY DOG SHAMPOO ANTI-QUEDA 750ML", price: "12,99", image: "SH_BOBY_ANT_QUEDAS_750ML.png", folder: "lancamentos" },
+    { name: "BOBY DOG SHAMPOO NEUTRALIZADOR DE ODORES 750ML", price: "12,99", image: "SH_BOBY_NEUTRA_ODORES_750ML.png", folder: "lancamentos" },
+    { name: "BOBY DOG SHAMPOO PARA PELOS CURTOS 750ML", price: "12,99", image: "SH_BOBY_PELOS_CURTOS_750ML.png", folder: "lancamentos" },
+    { name: "BOBY DOG SHAMPOO PARA PELOS LONGOS 750ML", price: "12,99", image: "SH_BOBY_PELOS_LONGOS_750ML.png", folder: "lancamentos" },
   ];
 
   const veganShampoos = [
@@ -62,8 +62,8 @@ const ProductsSection = () => {
           />
           
           <ProductSection 
-            title="Shampoos Funcionais - 750ml - R$12,99"
-            products={functionalShampoos}
+            title="Shampoos Especiais e por Raça - 750ml - R$12,99"
+            products={specialShampoos}
           />
 
           <ProductSection 
