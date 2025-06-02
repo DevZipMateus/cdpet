@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Dialog, DialogContent, DialogClose } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, ArrowRight, X, MessageCircle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, X } from 'lucide-react';
 
 interface Product {
   name: string;
@@ -127,7 +127,11 @@ const ProductImageModal = ({
               onClick={handleWhatsAppOrder}
               className="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-3"
             >
-              <MessageCircle className="mr-2 h-5 w-5" />
+              <img 
+                src="/whatsapp1.png" 
+                alt="WhatsApp" 
+                className="mr-2 h-5 w-5"
+              />
               Comprar via WhatsApp
             </Button>
           </div>
