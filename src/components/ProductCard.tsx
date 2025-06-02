@@ -10,7 +10,13 @@ interface ProductCardProps {
 
 const ProductCard = ({ name, price, image, folder = "shampoo" }: ProductCardProps) => {
   const isVegan = folder === "vegano";
-  const volume = isVegan ? "500ml" : "750ml";
+  const isRace = folder === "Raca";
+  
+  const getVolume = () => {
+    if (isVegan) return "500ml";
+    if (isRace) return "500ml";
+    return "750ml";
+  };
   
   return (
     <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
@@ -30,7 +36,7 @@ const ProductCard = ({ name, price, image, folder = "shampoo" }: ProductCardProp
             R$ {price}
           </span>
           <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
-            {volume}
+            {getVolume()}
           </span>
         </div>
       </CardContent>

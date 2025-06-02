@@ -32,6 +32,14 @@ const ProductsSection = () => {
     { name: "BOBY DOG SHAMPOO VEGANO AÇAÍ + GUARANÁ 500ML", price: "11,99", image: "SH_BOBY_VEG_ACAI_GUARA_500ML.png", folder: "vegano" },
   ];
 
+  const raceShampoos = [
+    { name: "BOBY DOG SHAMPOO RAÇA SHIH TZU / LHASA / COCKER 500ML", price: "12,99", image: "SH_BOBY_RACAS_SHTZ_LHAS_COCK_500ML.png", folder: "Raca" },
+    { name: "BOBY DOG SHAMPOO RAÇA ROTTWEILER / PITBULL / PINSCHER 500ML", price: "12,99", image: "SH_BOBY_RACAS_ROT_PIT_PIN_500ML.png", folder: "Raca" },
+    { name: "BOBY DOG SHAMPOO RAÇA PUG / BULLDOG / BOXER 500ML", price: "12,99", image: "SH_BOBY_RACAS_PUG_BULDG_BOX_500ML.png", folder: "Raca" },
+    { name: "BOBY DOG SHAMPOO RAÇA MALTES / YORKSHIRE / SPITZ 500ML", price: "12,99", image: "SH_BOBY_RACAS_MALT_YORK_SPZT_500ML.png", folder: "Raca" },
+    { name: "BOBY DOG SHAMPOO RAÇA LABRADOR / GOLDEN 500ML", price: "12,99", image: "SH_BOBY_RACAS_LABRA_GOLDEN_500ML.png", folder: "Raca" },
+  ];
+
   const conditioners = [
     { name: "BOBY DOG CONDICIONADOR CHOCOLATE 750ML", price: "12,99", image: "Condicionador 750 ml BOBY DOG CHOCOLATE.png" },
     { name: "BOBY DOG CONDICIONADOR SILICONADO 750ML", price: "12,99", image: "Condicionador 750 ml BOBY DOG SILICONADO.png" },
@@ -61,6 +69,11 @@ const ProductsSection = () => {
           <ProductSection 
             title="Shampoos Veganos e Naturais - 500ml - R$11,99"
             products={veganShampoos}
+          />
+
+          <ProductSection 
+            title="Shampoos Específicos por Raça - 500ml - R$12,99"
+            products={raceShampoos}
           />
           
           <ProductSection 
