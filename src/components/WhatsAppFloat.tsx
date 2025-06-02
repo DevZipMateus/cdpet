@@ -1,6 +1,4 @@
 
-import { MessageCircle } from 'lucide-react';
-
 const WhatsAppFloat = () => {
   return (
     <a
@@ -10,7 +8,11 @@ const WhatsAppFloat = () => {
       className="whatsapp-float"
       aria-label="Falar no WhatsApp"
     >
-      <MessageCircle className="h-6 w-6" />
+      <img 
+        src="/whatsapp1.png" 
+        alt="WhatsApp" 
+        className="h-6 w-6"
+      />
     </a>
   );
 };

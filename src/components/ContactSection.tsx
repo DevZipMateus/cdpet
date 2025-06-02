@@ -1,5 +1,5 @@
 
-import { Mail, Phone, MapPin, Instagram, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 
 const ContactSection = () => {
@@ -22,7 +22,11 @@ const ContactSection = () => {
                 {/* WhatsApp */}
                 <div className="flex items-start">
                   <div className="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-1">
-                    <MessageCircle className="h-5 w-5 text-green-600" />
+                    <img 
+                      src="/whatsapp1.png" 
+                      alt="WhatsApp" 
+                      className="h-5 w-5"
+                    />
                   </div>
                   <div className="ml-3">
                     <h4 className="text-base font-medium">WhatsApp</h4>
