@@ -6,6 +6,7 @@ interface Product {
   name: string;
   price: string;
   image: string;
+  folder?: string;
 }
 
 interface ProductSectionProps {
@@ -27,6 +28,7 @@ const ProductSection = ({ title, products }: ProductSectionProps) => {
               name={product.name}
               price={product.price}
               image={product.image}
+              folder={product.folder}
             />
           ))}
         </div>

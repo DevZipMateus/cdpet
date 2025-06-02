@@ -5,15 +5,19 @@ interface ProductCardProps {
   name: string;
   price: string;
   image: string;
+  folder?: string;
 }
 
-const ProductCard = ({ name, price, image }: ProductCardProps) => {
+const ProductCard = ({ name, price, image, folder = "shampoo" }: ProductCardProps) => {
+  const isVegan = folder === "vegano";
+  const volume = isVegan ? "500ml" : "750ml";
+  
   return (
     <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
       <CardContent className="p-4">
         <div className="aspect-square relative overflow-hidden rounded-lg mb-3 bg-gray-50">
           <img 
-            src={`/lovable-uploads/shampoo/${image}`}
+            src={`/lovable-uploads/${folder}/${image}`}
             alt={name}
             className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
           />
@@ -26,7 +30,7 @@ const ProductCard = ({ name, price, image }: ProductCardProps) => {
             R$ {price}
           </span>
           <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
-            750ml
+            {volume}
           </span>
         </div>
       </CardContent>

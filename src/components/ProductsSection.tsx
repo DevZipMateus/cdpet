@@ -22,6 +22,16 @@ const ProductsSection = () => {
     { name: "BOBY DOG SHAMPOO ALOE VERA + HAMAMELIS 750ML", price: "12,99", image: "SH_BOBY_ALOEVERA_HAMA_750ML.png" },
   ];
 
+  const veganShampoos = [
+    { name: "BOBY DOG SHAMPOO VEGANO MORANGO 500ML", price: "11,99", image: "SH_BOBY_VEG_MORANGO_500ML.png", folder: "vegano" },
+    { name: "BOBY DOG SHAMPOO VEGANO MELANCIA 500ML", price: "11,99", image: "SH_BOBY_VEG_MELANCIA_500ML.png", folder: "vegano" },
+    { name: "BOBY DOG SHAMPOO VEGANO FRUTAS VERMELHAS 500ML", price: "11,99", image: "SH_BOBY_VEG_FRUT_VERMELHAS_500ML.png", folder: "vegano" },
+    { name: "BOBY DOG SHAMPOO VEGANO FRUTAS TROPICAIS 500ML", price: "11,99", image: "SH_BOBY_VEG_FRUT_TROPICAIS_500ML.png", folder: "vegano" },
+    { name: "BOBY DOG SHAMPOO VEGANO FRUTAS CÍTRICAS 500ML", price: "11,99", image: "SH_BOBY_VEG_FRUT_CITRICAS_500ML.png", folder: "vegano" },
+    { name: "BOBY DOG SHAMPOO VEGANO COCO 500ML", price: "11,99", image: "SH_BOBY_VEG_COCO_500ML.png", folder: "vegano" },
+    { name: "BOBY DOG SHAMPOO VEGANO AÇAÍ + GUARANÁ 500ML", price: "11,99", image: "SH_BOBY_VEG_ACAI_GUARA_500ML.png", folder: "vegano" },
+  ];
+
   const conditioners = [
     { name: "BOBY DOG CONDICIONADOR CHOCOLATE 750ML", price: "12,99", image: "Condicionador 750 ml BOBY DOG CHOCOLATE.png" },
     { name: "BOBY DOG CONDICIONADOR SILICONADO 750ML", price: "12,99", image: "Condicionador 750 ml BOBY DOG SILICONADO.png" },
@@ -46,6 +56,11 @@ const ProductsSection = () => {
           <ProductSection 
             title="Shampoos Funcionais - 750ml - R$12,99"
             products={functionalShampoos}
+          />
+
+          <ProductSection 
+            title="Shampoos Veganos e Naturais - 500ml - R$11,99"
+            products={veganShampoos}
           />
           
           <ProductSection 
