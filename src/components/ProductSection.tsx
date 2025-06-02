@@ -1,6 +1,8 @@
 
+import { useState } from 'react';
 import AnimatedSection from './AnimatedSection';
 import ProductCard from './ProductCard';
+import ProductImageModal from './ProductImageModal';
 
 interface Product {
   name: string;
@@ -15,6 +17,14 @@ interface ProductSectionProps {
 }
 
 const ProductSection = ({ title, products }: ProductSectionProps) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const handleImageClick = (index: number) => {
+    setCurrentImageIndex(index);
+    setIsModalOpen(true);
+  };
+
   return (
     <AnimatedSection>
       <div className="mb-8">
@@ -29,10 +39,19 @@ const ProductSection = ({ title, products }: ProductSectionProps) => {
               price={product.price}
               image={product.image}
               folder={product.folder}
+              onClick={() => handleImageClick(index)}
             />
           ))}
         </div>
       </div>
+
+      <ProductImageModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        products={products}
+        currentIndex={currentImageIndex}
+        onIndexChange={setCurrentImageIndex}
+      />
     </AnimatedSection>
   );
 };

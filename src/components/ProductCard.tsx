@@ -6,9 +6,10 @@ interface ProductCardProps {
   price: string;
   image: string;
   folder?: string;
+  onClick?: () => void;
 }
 
-const ProductCard = ({ name, price, image, folder = "shampoo" }: ProductCardProps) => {
+const ProductCard = ({ name, price, image, folder = "shampoo", onClick }: ProductCardProps) => {
   const isVegan = folder === "vegano";
   const isRace = folder === "Raca";
   const isLancamentos = folder === "lancamentos";
@@ -27,14 +28,19 @@ const ProductCard = ({ name, price, image, folder = "shampoo" }: ProductCardProp
   };
   
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-      <CardContent className="p-4">
+    <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+      <CardContent className="p-4" onClick={onClick}>
         <div className="aspect-square relative overflow-hidden rounded-lg mb-3 bg-gray-50">
           <img 
             src={`/lovable-uploads/${folder}/${image}`}
             alt={name}
             className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
           />
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+            <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium">
+              Clique para ampliar
+            </span>
+          </div>
         </div>
         <h3 className="font-medium text-sm text-gray-800 mb-2 line-clamp-2 min-h-[2.5rem]">
           {name}
