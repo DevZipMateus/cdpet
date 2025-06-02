@@ -40,6 +40,21 @@ const ProductsSection = () => {
     { name: "BOBY DOG SHAMPOO RAÇA LABRADOR / GOLDEN 500ML", price: "12,99", image: "SH_BOBY_RACAS_LABRA_GOLDEN_500ML.png", folder: "Raca" },
   ];
 
+  const treatmentProducts = [
+    { name: "BOBY DOG SHAMPOO PELAGEM ESCURA 750ML", price: "12,99", image: "Pelagem Escura.png", folder: "tratamento" },
+    { name: "BOBY DOG SHAMPOO NEUTRO 750ML", price: "12,99", image: "Neutro.png", folder: "tratamento" },
+    { name: "BOBY DOG SHAMPOO FILHOTES 750ML", price: "12,99", image: "Filhotes.png", folder: "tratamento" },
+    { name: "BOBY DOG SHAMPOO CLAREADOR 750ML", price: "12,99", image: "Clareador.png", folder: "tratamento" },
+    { name: "BOBY DOG SHAMPOO COCO 750ML", price: "12,99", image: "Coco.png", folder: "tratamento" },
+    { name: "BOBY DOG SABONETE ENXOFRE 80G", price: "11,99", image: "Enxofre.png", folder: "tratamento" },
+    { name: "BOBY DOG SHAMPOO HIPOALERGÊNICO 750ML", price: "12,99", image: "Hipoalergênico.png", folder: "tratamento" },
+    { name: "BOBY DOG SHAMPOO SUAVE 500ML", price: "12,99", image: "Suave.png", folder: "tratamento" },
+    { name: "BOBY DOG TALCO BANHO A SECO", price: "11,99", image: "Talco BOBY DOG BANHO A SECO.png", folder: "tratamento" },
+    { name: "BOBY DOG TALCO ERVA SANTA MARIA", price: "11,99", image: "Talco BOBY DOG ERVA SANTA MARIA.png", folder: "tratamento" },
+    { name: "BOBY DOG TALCO HIPOALERGÊNICO", price: "11,99", image: "Talco BOBY DOG HIPOALERGENICO.png", folder: "tratamento" },
+    { name: "BOBY CAT TALCO ERVA SANTA MARIA 100GR", price: "11,99", image: "Talco BOBY CAT ERVA SANTA MARIA.png", folder: "tratamento" },
+  ];
+
   const conditioners = [
     { name: "BOBY DOG CONDICIONADOR CHOCOLATE 750ML", price: "12,99", image: "Condicionador 750 ml BOBY DOG CHOCOLATE.png" },
     { name: "BOBY DOG CONDICIONADOR SILICONADO 750ML", price: "12,99", image: "Condicionador 750 ml BOBY DOG SILICONADO.png" },
@@ -74,6 +89,11 @@ const ProductsSection = () => {
           <ProductSection 
             title="Shampoos Específicos por Raça - 500ml - R$12,99"
             products={raceShampoos}
+          />
+
+          <ProductSection 
+            title="Shampoos e Produtos de Tratamento"
+            products={treatmentProducts}
           />
           
           <ProductSection 

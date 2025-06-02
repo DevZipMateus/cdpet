@@ -12,11 +12,17 @@ const ProductCard = ({ name, price, image, folder = "shampoo" }: ProductCardProp
   const isVegan = folder === "vegano";
   const isRace = folder === "Raca";
   const isLancamentos = folder === "lancamentos";
+  const isTratamento = folder === "tratamento";
   
   const getVolume = () => {
     if (isVegan) return "500ml";
     if (isRace) return "500ml";
     if (isLancamentos) return "750ml";
+    if (isTratamento) {
+      if (name.includes("TALCO") || name.includes("SABONETE")) return "";
+      if (name.includes("500ML")) return "500ml";
+      return "750ml";
+    }
     return "750ml";
   };
   
@@ -37,9 +43,11 @@ const ProductCard = ({ name, price, image, folder = "shampoo" }: ProductCardProp
           <span className="text-lg font-bold text-accent">
             R$ {price}
           </span>
-          <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
-            {getVolume()}
-          </span>
+          {getVolume() && (
+            <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
+              {getVolume()}
+            </span>
+          )}
         </div>
       </CardContent>
     </Card>
