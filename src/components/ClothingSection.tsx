@@ -32,8 +32,8 @@ const ClothingSection = () => {
     { numero: 10, tamanho: "72 cm", preco: "68,99" }
   ];
 
-  const handleWhatsAppOrder = (productType: string, numero: number, preco: string) => {
-    const message = `Olá! Gostaria de fazer um pedido da ${productType} Nº ${numero} - R$ ${preco}`;
+  const handleWhatsAppOrder = (productType: string, numero: number, tamanho: string, preco: string) => {
+    const message = `Olá! Gostaria de fazer um pedido da ${productType} Nº ${numero} (${tamanho}) - R$ ${preco}`;
     const whatsappUrl = `https://wa.me/5561999822328?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -113,7 +113,7 @@ const ClothingSection = () => {
                               </TableCell>
                               <TableCell className="text-center px-1 sm:px-3">
                                 <button
-                                  onClick={() => handleWhatsAppOrder("Roupinha Fleece", product.numero, product.preco)}
+                                  onClick={() => handleWhatsAppOrder("Roupinha em Tecido Fleece", product.numero, product.tamanho, product.preco)}
                                   className="bg-green-500 hover:bg-green-600 text-white px-2 py-1 rounded text-xs flex items-center gap-1 mx-auto whitespace-nowrap"
                                 >
                                   <img 
@@ -121,8 +121,7 @@ const ClothingSection = () => {
                                     alt="WhatsApp" 
                                     className="h-3 w-3 flex-shrink-0"
                                   />
-                                  <span className="hidden sm:inline">Comprar</span>
-                                  <span className="sm:hidden">Buy</span>
+                                  Comprar
                                 </button>
                               </TableCell>
                             </TableRow>
@@ -173,7 +172,7 @@ const ClothingSection = () => {
                               </TableCell>
                               <TableCell className="text-center px-1 sm:px-3">
                                 <button
-                                  onClick={() => handleWhatsAppOrder("Roupinha Ovelha", product.numero, product.preco)}
+                                  onClick={() => handleWhatsAppOrder("Roupinha em Tecido Ovelha Premium", product.numero, product.tamanho, product.preco)}
                                   className="bg-green-500 hover:bg-green-600 text-white px-2 py-1 rounded text-xs flex items-center gap-1 mx-auto whitespace-nowrap"
                                 >
                                   <img 
@@ -181,8 +180,7 @@ const ClothingSection = () => {
                                     alt="WhatsApp" 
                                     className="h-3 w-3 flex-shrink-0"
                                   />
-                                  <span className="hidden sm:inline">Comprar</span>
-                                  <span className="sm:hidden">Buy</span>
+                                  Comprar
                                 </button>
                               </TableCell>
                             </TableRow>
