@@ -2,6 +2,7 @@
 import AnimatedSection from './AnimatedSection';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const ClothingSection = () => {
   const fleeceProducts = [
@@ -38,136 +39,189 @@ const ClothingSection = () => {
     window.open(whatsappUrl, '_blank');
   };
 
+  const handleWhatsAppKitOrder = () => {
+    const message = `Olá! Gostaria de fazer um pedido do Kit Colchão P/M/G Nylon Impermeável - R$ 69,99`;
+    const whatsappUrl = `https://wa.me/5561999822328?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section id="roupinhas" className="py-16 bg-gradient-to-b from-secondary/20 to-white">
       <div className="section-container">
         <AnimatedSection>
-          <h2 className="section-title">Roupinhas para Pets</h2>
+          <h2 className="section-title">Roupinhas e Acessórios para Pets</h2>
           <p className="section-subtitle">
             Mantenha seu pet aquecido e estiloso com nossas roupinhas em tecido fleece e microfibra
           </p>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
-          {/* Roupinhas Fleece */}
+        <div className="mt-12">
           <AnimatedSection delay={200}>
-            <Card className="overflow-hidden">
-              <CardHeader className="pb-4">
-                <div className="aspect-video relative overflow-hidden rounded-lg mb-4">
-                  <img 
-                    src="/lovable-uploads/70350305-fcda-4426-adf2-cd5b34e3a9c2.png"
-                    alt="Roupinhas em Tecido Fleece - Grade de Numerações e Medidas"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardTitle className="text-xl text-primary text-center">
-                  Roupinhas em Tecido Fleece - Microfibra
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="overflow-x-auto">
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead className="text-center">Número</TableHead>
-                        <TableHead className="text-center">Tamanho</TableHead>
-                        <TableHead className="text-center">Preço</TableHead>
-                        <TableHead className="text-center">Ação</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {fleeceProducts.map((product) => (
-                        <TableRow key={product.numero}>
-                          <TableCell className="text-center font-medium">
-                            Nº {product.numero}
-                          </TableCell>
-                          <TableCell className="text-center">
-                            {product.tamanho}
-                          </TableCell>
-                          <TableCell className="text-center font-bold text-accent">
-                            R$ {product.preco}
-                          </TableCell>
-                          <TableCell className="text-center">
-                            <button
-                              onClick={() => handleWhatsAppOrder("Roupinha Fleece", product.numero, product.preco)}
-                              className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-xs flex items-center gap-1 mx-auto"
-                            >
-                              <img 
-                                src="/whatsapp1.png" 
-                                alt="WhatsApp" 
-                                className="h-3 w-3"
-                              />
-                              Comprar
-                            </button>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </div>
-              </CardContent>
-            </Card>
+            <Tabs defaultValue="fleece" className="w-full">
+              <TabsList className="grid w-full grid-cols-2 mb-8">
+                <TabsTrigger value="fleece" className="text-sm">
+                  Roupinhas em Tecido Fleece
+                </TabsTrigger>
+                <TabsTrigger value="ovelha" className="text-sm">
+                  Roupinhas Ovelha - Premium
+                </TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="fleece">
+                <Card className="overflow-hidden">
+                  <CardHeader className="pb-4">
+                    <div className="aspect-video relative overflow-hidden rounded-lg mb-4">
+                      <img 
+                        src="/lovable-uploads/70350305-fcda-4426-adf2-cd5b34e3a9c2.png"
+                        alt="Roupinhas em Tecido Fleece - Grade de Numerações e Medidas"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardTitle className="text-xl text-primary text-center">
+                      Roupinhas em Tecido Fleece - Microfibra
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="overflow-x-auto">
+                      <Table>
+                        <TableHeader>
+                          <TableRow>
+                            <TableHead className="text-center">Número</TableHead>
+                            <TableHead className="text-center">Tamanho</TableHead>
+                            <TableHead className="text-center">Preço</TableHead>
+                            <TableHead className="text-center">Ação</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          {fleeceProducts.map((product) => (
+                            <TableRow key={product.numero}>
+                              <TableCell className="text-center font-medium">
+                                Nº {product.numero}
+                              </TableCell>
+                              <TableCell className="text-center">
+                                {product.tamanho}
+                              </TableCell>
+                              <TableCell className="text-center font-bold text-accent">
+                                R$ {product.preco}
+                              </TableCell>
+                              <TableCell className="text-center">
+                                <button
+                                  onClick={() => handleWhatsAppOrder("Roupinha Fleece", product.numero, product.preco)}
+                                  className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-xs flex items-center gap-1 mx-auto"
+                                >
+                                  <img 
+                                    src="/whatsapp1.png" 
+                                    alt="WhatsApp" 
+                                    className="h-3 w-3"
+                                  />
+                                  Comprar
+                                </button>
+                              </TableCell>
+                            </TableRow>
+                          ))}
+                        </TableBody>
+                      </Table>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+
+              <TabsContent value="ovelha">
+                <Card className="overflow-hidden">
+                  <CardHeader className="pb-4">
+                    <div className="aspect-video relative overflow-hidden rounded-lg mb-4">
+                      <img 
+                        src="/lovable-uploads/68486833-9c9e-4361-b194-673406a2c0d1.png"
+                        alt="Roupinhas em Tecido Fleece - Microfibra Melhor que Soft"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardTitle className="text-xl text-primary text-center">
+                      Roupinhas Ovelha - Premium
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="overflow-x-auto">
+                      <Table>
+                        <TableHeader>
+                          <TableRow>
+                            <TableHead className="text-center">Número</TableHead>
+                            <TableHead className="text-center">Tamanho</TableHead>
+                            <TableHead className="text-center">Preço</TableHead>
+                            <TableHead className="text-center">Ação</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          {ovelhaProducts.map((product) => (
+                            <TableRow key={product.numero}>
+                              <TableCell className="text-center font-medium">
+                                Nº {product.numero}
+                              </TableCell>
+                              <TableCell className="text-center">
+                                {product.tamanho}
+                              </TableCell>
+                              <TableCell className="text-center font-bold text-accent">
+                                R$ {product.preco}
+                              </TableCell>
+                              <TableCell className="text-center">
+                                <button
+                                  onClick={() => handleWhatsAppOrder("Roupinha Ovelha", product.numero, product.preco)}
+                                  className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-xs flex items-center gap-1 mx-auto"
+                                >
+                                  <img 
+                                    src="/whatsapp1.png" 
+                                    alt="WhatsApp" 
+                                    className="h-3 w-3"
+                                  />
+                                  Comprar
+                                </button>
+                              </TableCell>
+                            </TableRow>
+                          ))}
+                        </TableBody>
+                      </Table>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            </Tabs>
           </AnimatedSection>
 
-          {/* Roupinhas Ovelha */}
+          {/* Kit Colchão Section */}
           <AnimatedSection delay={400}>
-            <Card className="overflow-hidden">
-              <CardHeader className="pb-4">
-                <div className="aspect-video relative overflow-hidden rounded-lg mb-4">
-                  <img 
-                    src="/lovable-uploads/68486833-9c9e-4361-b194-673406a2c0d1.png"
-                    
-                    alt="Roupinhas em Tecido Fleece - Microfibra Melhor que Soft"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardTitle className="text-xl text-primary text-center">
-                  Roupinhas Ovelha - Premium
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="overflow-x-auto">
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead className="text-center">Número</TableHead>
-                        <TableHead className="text-center">Tamanho</TableHead>
-                        <TableHead className="text-center">Preço</TableHead>
-                        <TableHead className="text-center">Ação</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {ovelhaProducts.map((product) => (
-                        <TableRow key={product.numero}>
-                          <TableCell className="text-center font-medium">
-                            Nº {product.numero}
-                          </TableCell>
-                          <TableCell className="text-center">
-                            {product.tamanho}
-                          </TableCell>
-                          <TableCell className="text-center font-bold text-accent">
-                            R$ {product.preco}
-                          </TableCell>
-                          <TableCell className="text-center">
-                            <button
-                              onClick={() => handleWhatsAppOrder("Roupinha Ovelha", product.numero, product.preco)}
-                              className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-xs flex items-center gap-1 mx-auto"
-                            >
-                              <img 
-                                src="/whatsapp1.png" 
-                                alt="WhatsApp" 
-                                className="h-3 w-3"
-                              />
-                              Comprar
-                            </button>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </div>
-              </CardContent>
-            </Card>
+            <div className="mt-12">
+              <Card className="overflow-hidden max-w-2xl mx-auto">
+                <CardHeader className="pb-4">
+                  <div className="aspect-video relative overflow-hidden rounded-lg mb-4">
+                    <img 
+                      src="/lovable-uploads/6e879b97-36db-4668-ac59-27e582cac477.png"
+                      alt="Kit Colchão P/M/G Nylon Impermeável com Ziper"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <CardTitle className="text-xl text-primary text-center">
+                    Kit Colchão P/M/G Nylon Impermeável
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <p className="text-lg font-bold text-accent mb-4">R$ 69,99</p>
+                  <p className="text-gray-600 mb-6">
+                    Kit completo com colchões em três tamanhos (P/M/G) em nylon impermeável com zíper
+                  </p>
+                  <button
+                    onClick={handleWhatsAppKitOrder}
+                    className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded text-sm flex items-center gap-2 mx-auto"
+                  >
+                    <img 
+                      src="/whatsapp1.png" 
+                      alt="WhatsApp" 
+                      className="h-4 w-4"
+                    />
+                    Comprar Kit Colchão
+                  </button>
+                </CardContent>
+              </Card>
+            </div>
           </AnimatedSection>
         </div>
 
