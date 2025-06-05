@@ -63,6 +63,39 @@ const Footer = () => {
                   <p className="text-xs text-gray-400">Cosméticos para pets</p>
                 </div>
               </div>
+              <div className="flex items-center space-x-3">
+                <img 
+                  src="/lovable-uploads/51f3f012-7bc6-43d3-a546-2c05e39606ce.png"
+                  alt="PROSS Professional"
+                  className="w-12 h-12 object-contain rounded bg-white p-1"
+                />
+                <div>
+                  <p className="text-sm font-medium text-white">PROSS</p>
+                  <p className="text-xs text-gray-400">Professional</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <img 
+                  src="/lovable-uploads/31da2b15-1fca-45de-9ed0-82d2871e8544.png"
+                  alt="LIFE Cosmético Animal"
+                  className="w-12 h-12 object-contain rounded bg-white p-1"
+                />
+                <div>
+                  <p className="text-sm font-medium text-white">LIFE</p>
+                  <p className="text-xs text-gray-400">Cosmético Animal</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <img 
+                  src="/lovable-uploads/e7f1df0e-8a35-4428-b503-318c658f69d7.png"
+                  alt="LAVI PET"
+                  className="w-12 h-12 object-contain rounded bg-white p-1"
+                />
+                <div>
+                  <p className="text-sm font-medium text-white">LAVI PET</p>
+                  <p className="text-xs text-gray-400">Produtos para pets</p>
+                </div>
+              </div>
               <p className="text-xs text-orange-400 font-medium">
                 Exclusivo em Brasília!
               </p>
