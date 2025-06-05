@@ -1,3 +1,4 @@
+
 import AnimatedSection from './AnimatedSection';
 import ProductSection from './ProductSection';
 
@@ -108,7 +109,7 @@ const ProductsSection = () => {
                 Quer ver mais produtos?
               </h3>
               <p className="text-gray-600 mb-4">
-                Entre em contato conosco e conheça nosso catálogo completo com rações, petiscos, brinquedos e muito mais!
+                Entre em contato conosco e será atendido pelo nosso time de vendas! Conheça nosso catálogo completo com rações, petiscos, brinquedos e muito mais!
               </p>
               <a 
                 href="https://wa.me/5561999822328" 
