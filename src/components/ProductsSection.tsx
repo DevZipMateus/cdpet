@@ -41,14 +41,14 @@ const ProductsSection = () => {
   ];
 
   const soapAndTalcProducts = [
-    { name: "BOBY DOG SABONETE PELAGEM ESCURA 80G", price: "12,99", image: "Pelagem Escura.png", folder: "tratamento" },
-    { name: "BOBY DOG SABONETE NEUTRO 80G", price: "12,99", image: "Neutro.png", folder: "tratamento" },
-    { name: "BOBY DOG SABONETE FILHOTES 80G", price: "12,99", image: "Filhotes.png", folder: "tratamento" },
-    { name: "BOBY DOG SABONETE CLAREADOR 80G", price: "12,99", image: "Clareador.png", folder: "tratamento" },
-    { name: "BOBY DOG SABONETE COCO 80G", price: "12,99", image: "Coco.png", folder: "tratamento" },
-    { name: "BOBY DOG SABONETE ENXOFRE 80G", price: "11,99", image: "Enxofre.png", folder: "tratamento" },
-    { name: "BOBY DOG SABONETE HIPOALERGÊNICO 80G", price: "12,99", image: "Hipoalergênico.png", folder: "tratamento" },
-    { name: "BOBY DOG SABONETE SUAVE 80G", price: "12,99", image: "Suave.png", folder: "tratamento" },
+    { name: "BOBY DOG SABONETE PELAGEM ESCURA 80G", price: "6,29", image: "Pelagem Escura.png", folder: "tratamento" },
+    { name: "BOBY DOG SABONETE NEUTRO 80G", price: "6,29", image: "Neutro.png", folder: "tratamento" },
+    { name: "BOBY DOG SABONETE FILHOTES 80G", price: "6,29", image: "Filhotes.png", folder: "tratamento" },
+    { name: "BOBY DOG SABONETE CLAREADOR 80G", price: "6,29", image: "Clareador.png", folder: "tratamento" },
+    { name: "BOBY DOG SABONETE COCO 80G", price: "6,29", image: "Coco.png", folder: "tratamento" },
+    { name: "BOBY DOG SABONETE ENXOFRE 80G", price: "6,29", image: "Enxofre.png", folder: "tratamento" },
+    { name: "BOBY DOG SABONETE HIPOALERGÊNICO 80G", price: "6,29", image: "Hipoalergênico.png", folder: "tratamento" },
+    { name: "BOBY DOG SABONETE SUAVE 80G", price: "6,29", image: "Suave.png", folder: "tratamento" },
     { name: "BOBY DOG TALCO BANHO A SECO 100G", price: "11,99", image: "Talco BOBY DOG BANHO A SECO.png", folder: "tratamento" },
     { name: "BOBY DOG TALCO ERVA SANTA MARIA 100G", price: "11,99", image: "Talco BOBY DOG ERVA SANTA MARIA.png", folder: "tratamento" },
     { name: "BOBY DOG TALCO HIPOALERGÊNICO 100G", price: "11,99", image: "Talco BOBY DOG HIPOALERGENICO.png", folder: "tratamento" },
