@@ -1,6 +1,7 @@
 
 import PlanCard from './PlanCard';
 import AnimatedSection from './AnimatedSection';
+import { CreditCard, Zap } from 'lucide-react';
 
 const PlansSection = () => {
   const plans = [{
@@ -31,6 +32,33 @@ const PlansSection = () => {
           <p className="section-subtitle">
             Escolha a opção que melhor se adapta à localização e necessidades do seu pet shop
           </p>
+        </AnimatedSection>
+
+        {/* Destacar opções de pagamento */}
+        <AnimatedSection className="mb-12">
+          <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl p-6 max-w-4xl mx-auto">
+            <h3 className="text-xl font-bold text-center mb-6 text-primary">Formas de Pagamento</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex items-center gap-4 bg-white rounded-lg p-4 shadow-sm">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <CreditCard className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800">Parcelamento</h4>
+                  <p className="text-primary font-medium">Em até 6x sem juros</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 bg-white rounded-lg p-4 shadow-sm">
+                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+                  <Zap className="h-6 w-6 text-accent" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800">PIX à vista</h4>
+                  <p className="text-accent font-medium">10% de desconto</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
