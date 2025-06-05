@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Dialog, DialogContent, DialogClose } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -132,7 +131,7 @@ const ProductImageModal = ({
                 alt="WhatsApp" 
                 className="mr-2 h-5 w-5"
               />
-              Comprar via WhatsApp
+              Comprar
             </Button>
           </div>
         </div>

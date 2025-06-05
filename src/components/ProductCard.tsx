@@ -7,9 +7,10 @@ interface ProductCardProps {
   image: string;
   folder?: string;
   onClick?: () => void;
+  onWhatsAppOrder?: () => void;
 }
 
-const ProductCard = ({ name, price, image, folder = "shampoo", onClick }: ProductCardProps) => {
+const ProductCard = ({ name, price, image, folder = "shampoo", onClick, onWhatsAppOrder }: ProductCardProps) => {
   const isVegan = folder === "vegano";
   const isRace = folder === "Raca";
   const isLancamentos = folder === "lancamentos";
@@ -26,11 +27,22 @@ const ProductCard = ({ name, price, image, folder = "shampoo", onClick }: Produc
     }
     return "750ml";
   };
+
+  const handleWhatsAppOrder = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (onWhatsAppOrder) {
+      onWhatsAppOrder();
+    } else {
+      const message = `Olá! Gostaria de fazer um pedido do produto: ${name} - R$ ${price}`;
+      const whatsappUrl = `https://wa.me/5561999822328?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+  };
   
   return (
     <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-      <CardContent className="p-4" onClick={onClick}>
-        <div className="aspect-square relative overflow-hidden rounded-lg mb-3 bg-gray-50">
+      <CardContent className="p-4">
+        <div className="aspect-square relative overflow-hidden rounded-lg mb-3 bg-gray-50" onClick={onClick}>
           <img 
             src={`/lovable-uploads/${folder}/${image}`}
             alt={name}
@@ -45,7 +57,7 @@ const ProductCard = ({ name, price, image, folder = "shampoo", onClick }: Produc
         <h3 className="font-medium text-sm text-gray-800 mb-2 line-clamp-2 min-h-[2.5rem]">
           {name}
         </h3>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mb-3">
           <span className="text-lg font-bold text-accent">
             R$ {price}
           </span>
@@ -55,6 +67,17 @@ const ProductCard = ({ name, price, image, folder = "shampoo", onClick }: Produc
             </span>
           )}
         </div>
+        <button
+          onClick={handleWhatsAppOrder}
+          className="w-full bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded text-sm flex items-center justify-center gap-2 transition-colors"
+        >
+          <img 
+            src="/whatsapp1.png" 
+            alt="WhatsApp" 
+            className="h-4 w-4"
+          />
+          Comprar
+        </button>
       </CardContent>
     </Card>
   );

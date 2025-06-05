@@ -25,6 +25,12 @@ const ProductSection = ({ title, products }: ProductSectionProps) => {
     setIsModalOpen(true);
   };
 
+  const handleWhatsAppOrder = (product: Product) => {
+    const message = `Olá! Gostaria de fazer um pedido do produto: ${product.name} - R$ ${product.price}`;
+    const whatsappUrl = `https://wa.me/5561999822328?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <AnimatedSection>
       <div className="mb-8">
@@ -40,6 +46,7 @@ const ProductSection = ({ title, products }: ProductSectionProps) => {
               image={product.image}
               folder={product.folder}
               onClick={() => handleImageClick(index)}
+              onWhatsAppOrder={() => handleWhatsAppOrder(product)}
             />
           ))}
         </div>
