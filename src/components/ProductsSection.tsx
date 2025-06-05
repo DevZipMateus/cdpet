@@ -117,7 +117,7 @@ const ProductsSection = () => {
                 rel="noopener noreferrer"
                 className="btn-accent inline-flex items-center gap-2"
               >
-                Ver Catálogo Completo
+                Atendimento, Time de vendas
               </a>
             </div>
           </div>
