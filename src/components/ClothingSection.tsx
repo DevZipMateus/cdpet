@@ -32,8 +32,14 @@ const ClothingSection = () => {
     { numero: 10, tamanho: "72 cm", preco: "68,99" }
   ];
 
-  const handleWhatsAppOrder = (productType: string, numero: number, preco: string) => {
+  const handleWhatsAppOrder = (productType: string, numero: number | string, preco: string) => {
     const message = `Olá! Gostaria de fazer um pedido da ${productType} Nº ${numero} - R$ ${preco}`;
+    const whatsappUrl = `https://wa.me/5561999822328?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const handleWhatsAppKitOrder = () => {
+    const message = `Olá! Gostaria de fazer um pedido do Kit Colchão P/M/G Nylon Impermeável com ziper - R$ 69,99`;
     const whatsappUrl = `https://wa.me/5561999822328?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -42,10 +48,49 @@ const ClothingSection = () => {
     <section id="roupinhas" className="py-16 bg-gradient-to-b from-secondary/20 to-white">
       <div className="section-container">
         <AnimatedSection>
-          <h2 className="section-title">Roupinhas para Pets</h2>
+          <h2 className="section-title">Roupinhas e Acessórios para Pets</h2>
           <p className="section-subtitle">
-            Mantenha seu pet aquecido e estiloso com nossas roupinhas em tecido fleece e microfibra
+            Mantenha seu pet aquecido, estiloso e confortável com nossas roupinhas e colchões
           </p>
+        </AnimatedSection>
+
+        {/* Kit Colchão */}
+        <AnimatedSection delay={100}>
+          <div className="mb-12">
+            <Card className="overflow-hidden max-w-md mx-auto">
+              <CardHeader className="pb-4">
+                <div className="aspect-video relative overflow-hidden rounded-lg mb-4">
+                  <img 
+                    src="/lovable-uploads/6e879b97-36db-4668-ac59-27e582cac477.png"
+                    alt="Kit Colchão P/M/G Nylon Impermeável com ziper"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardTitle className="text-xl text-primary text-center">
+                  Kit Colchão P/M/G Nylon Impermeável
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-gray-600 mb-4">
+                  Kit completo com 3 tamanhos (P/M/G) em nylon impermeável com ziper
+                </p>
+                <div className="mb-4">
+                  <span className="text-2xl font-bold text-accent">R$ 69,99</span>
+                </div>
+                <button
+                  onClick={handleWhatsAppKitOrder}
+                  className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 mx-auto"
+                >
+                  <img 
+                    src="/whatsapp1.png" 
+                    alt="WhatsApp" 
+                    className="h-5 w-5"
+                  />
+                  Comprar Kit Completo
+                </button>
+              </CardContent>
+            </Card>
+          </div>
         </AnimatedSection>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
@@ -174,7 +219,7 @@ const ClothingSection = () => {
           <div className="mt-12 text-center">
             <div className="glass-card rounded-xl p-6 max-w-2xl mx-auto">
               <h3 className="text-xl font-bold text-primary mb-3">
-                Quer mais informações sobre as roupinhas?
+                Quer mais informações sobre os produtos?
               </h3>
               <p className="text-gray-600 mb-4">
                 Entre em contato conosco para conhecer mais modelos e cores disponíveis!
