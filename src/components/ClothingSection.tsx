@@ -1,4 +1,3 @@
-
 import AnimatedSection from './AnimatedSection';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -58,18 +57,26 @@ const ClothingSection = () => {
         <div className="mt-12">
           <AnimatedSection delay={200}>
             <Tabs defaultValue="fleece" className="w-full">
-              <TabsList className="grid w-full grid-cols-2 mb-8">
-                <TabsTrigger value="fleece" className="text-sm">
-                  Roupinhas em Tecido Fleece
+              <TabsList className="grid w-full grid-cols-2 mb-8 h-auto p-1">
+                <TabsTrigger 
+                  value="fleece" 
+                  className="text-xs sm:text-sm px-2 py-2 sm:px-3 sm:py-1.5 leading-tight whitespace-normal text-center"
+                >
+                  <span className="block">Roupinhas em</span>
+                  <span className="block">Tecido Fleece</span>
                 </TabsTrigger>
-                <TabsTrigger value="ovelha" className="text-sm">
-                  Roupinhas Ovelha - Premium
+                <TabsTrigger 
+                  value="ovelha" 
+                  className="text-xs sm:text-sm px-2 py-2 sm:px-3 sm:py-1.5 leading-tight whitespace-normal text-center"
+                >
+                  <span className="block">Roupinhas Ovelha</span>
+                  <span className="block">Premium</span>
                 </TabsTrigger>
               </TabsList>
 
               <TabsContent value="fleece">
                 <Card className="overflow-hidden">
-                  <CardHeader className="pb-4">
+                  <CardHeader className="pb-4 px-4 sm:px-6">
                     <div className="aspect-video relative overflow-hidden rounded-lg mb-4">
                       <img 
                         src="/lovable-uploads/70350305-fcda-4426-adf2-cd5b34e3a9c2.png"
@@ -77,44 +84,45 @@ const ClothingSection = () => {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <CardTitle className="text-xl text-primary text-center">
+                    <CardTitle className="text-lg sm:text-xl text-primary text-center">
                       Roupinhas em Tecido Fleece - Microfibra
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="px-2 sm:px-6">
                     <div className="overflow-x-auto">
                       <Table>
                         <TableHeader>
                           <TableRow>
-                            <TableHead className="text-center">Número</TableHead>
-                            <TableHead className="text-center">Tamanho</TableHead>
-                            <TableHead className="text-center">Preço</TableHead>
-                            <TableHead className="text-center">Ação</TableHead>
+                            <TableHead className="text-center text-xs sm:text-sm px-1 sm:px-3">Número</TableHead>
+                            <TableHead className="text-center text-xs sm:text-sm px-1 sm:px-3">Tamanho</TableHead>
+                            <TableHead className="text-center text-xs sm:text-sm px-1 sm:px-3">Preço</TableHead>
+                            <TableHead className="text-center text-xs sm:text-sm px-1 sm:px-3">Ação</TableHead>
                           </TableRow>
                         </TableHeader>
                         <TableBody>
                           {fleeceProducts.map((product) => (
                             <TableRow key={product.numero}>
-                              <TableCell className="text-center font-medium">
+                              <TableCell className="text-center font-medium text-xs sm:text-sm px-1 sm:px-3">
                                 Nº {product.numero}
                               </TableCell>
-                              <TableCell className="text-center">
+                              <TableCell className="text-center text-xs sm:text-sm px-1 sm:px-3">
                                 {product.tamanho}
                               </TableCell>
-                              <TableCell className="text-center font-bold text-accent">
+                              <TableCell className="text-center font-bold text-accent text-xs sm:text-sm px-1 sm:px-3">
                                 R$ {product.preco}
                               </TableCell>
-                              <TableCell className="text-center">
+                              <TableCell className="text-center px-1 sm:px-3">
                                 <button
                                   onClick={() => handleWhatsAppOrder("Roupinha Fleece", product.numero, product.preco)}
-                                  className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-xs flex items-center gap-1 mx-auto"
+                                  className="bg-green-500 hover:bg-green-600 text-white px-2 py-1 rounded text-xs flex items-center gap-1 mx-auto whitespace-nowrap"
                                 >
                                   <img 
                                     src="/whatsapp1.png" 
                                     alt="WhatsApp" 
-                                    className="h-3 w-3"
+                                    className="h-3 w-3 flex-shrink-0"
                                   />
-                                  Comprar
+                                  <span className="hidden sm:inline">Comprar</span>
+                                  <span className="sm:hidden">Buy</span>
                                 </button>
                               </TableCell>
                             </TableRow>
@@ -128,7 +136,7 @@ const ClothingSection = () => {
 
               <TabsContent value="ovelha">
                 <Card className="overflow-hidden">
-                  <CardHeader className="pb-4">
+                  <CardHeader className="pb-4 px-4 sm:px-6">
                     <div className="aspect-video relative overflow-hidden rounded-lg mb-4">
                       <img 
                         src="/lovable-uploads/68486833-9c9e-4361-b194-673406a2c0d1.png"
@@ -136,44 +144,45 @@ const ClothingSection = () => {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <CardTitle className="text-xl text-primary text-center">
+                    <CardTitle className="text-lg sm:text-xl text-primary text-center">
                       Roupinhas Ovelha - Premium
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="px-2 sm:px-6">
                     <div className="overflow-x-auto">
                       <Table>
                         <TableHeader>
                           <TableRow>
-                            <TableHead className="text-center">Número</TableHead>
-                            <TableHead className="text-center">Tamanho</TableHead>
-                            <TableHead className="text-center">Preço</TableHead>
-                            <TableHead className="text-center">Ação</TableHead>
+                            <TableHead className="text-center text-xs sm:text-sm px-1 sm:px-3">Número</TableHead>
+                            <TableHead className="text-center text-xs sm:text-sm px-1 sm:px-3">Tamanho</TableHead>
+                            <TableHead className="text-center text-xs sm:text-sm px-1 sm:px-3">Preço</TableHead>
+                            <TableHead className="text-center text-xs sm:text-sm px-1 sm:px-3">Ação</TableHead>
                           </TableRow>
                         </TableHeader>
                         <TableBody>
                           {ovelhaProducts.map((product) => (
                             <TableRow key={product.numero}>
-                              <TableCell className="text-center font-medium">
+                              <TableCell className="text-center font-medium text-xs sm:text-sm px-1 sm:px-3">
                                 Nº {product.numero}
                               </TableCell>
-                              <TableCell className="text-center">
+                              <TableCell className="text-center text-xs sm:text-sm px-1 sm:px-3">
                                 {product.tamanho}
                               </TableCell>
-                              <TableCell className="text-center font-bold text-accent">
+                              <TableCell className="text-center font-bold text-accent text-xs sm:text-sm px-1 sm:px-3">
                                 R$ {product.preco}
                               </TableCell>
-                              <TableCell className="text-center">
+                              <TableCell className="text-center px-1 sm:px-3">
                                 <button
                                   onClick={() => handleWhatsAppOrder("Roupinha Ovelha", product.numero, product.preco)}
-                                  className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-xs flex items-center gap-1 mx-auto"
+                                  className="bg-green-500 hover:bg-green-600 text-white px-2 py-1 rounded text-xs flex items-center gap-1 mx-auto whitespace-nowrap"
                                 >
                                   <img 
                                     src="/whatsapp1.png" 
                                     alt="WhatsApp" 
-                                    className="h-3 w-3"
+                                    className="h-3 w-3 flex-shrink-0"
                                   />
-                                  Comprar
+                                  <span className="hidden sm:inline">Comprar</span>
+                                  <span className="sm:hidden">Buy</span>
                                 </button>
                               </TableCell>
                             </TableRow>
@@ -191,7 +200,7 @@ const ClothingSection = () => {
           <AnimatedSection delay={400}>
             <div className="mt-12">
               <Card className="overflow-hidden max-w-2xl mx-auto">
-                <CardHeader className="pb-4">
+                <CardHeader className="pb-4 px-4 sm:px-6">
                   <div className="aspect-video relative overflow-hidden rounded-lg mb-4">
                     <img 
                       src="/lovable-uploads/6e879b97-36db-4668-ac59-27e582cac477.png"
@@ -199,25 +208,26 @@ const ClothingSection = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <CardTitle className="text-xl text-primary text-center">
+                  <CardTitle className="text-lg sm:text-xl text-primary text-center">
                     Kit Colchão P/M/G Nylon Impermeável
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="text-center">
+                <CardContent className="text-center px-4 sm:px-6">
                   <p className="text-lg font-bold text-accent mb-4">R$ 69,99</p>
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-gray-600 mb-6 text-sm sm:text-base">
                     Kit completo com colchões em três tamanhos (P/M/G) em nylon impermeável com zíper
                   </p>
                   <button
                     onClick={handleWhatsAppKitOrder}
-                    className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded text-sm flex items-center gap-2 mx-auto"
+                    className="bg-green-500 hover:bg-green-600 text-white px-4 sm:px-6 py-3 rounded text-sm flex items-center gap-2 mx-auto"
                   >
                     <img 
                       src="/whatsapp1.png" 
                       alt="WhatsApp" 
                       className="h-4 w-4"
                     />
-                    Comprar Kit Colchão
+                    <span className="hidden sm:inline">Comprar Kit Colchão</span>
+                    <span className="sm:hidden">Kit Colchão</span>
                   </button>
                 </CardContent>
               </Card>
@@ -227,25 +237,26 @@ const ClothingSection = () => {
 
         <AnimatedSection delay={600}>
           <div className="mt-12 text-center">
-            <div className="glass-card rounded-xl p-6 max-w-2xl mx-auto">
-              <h3 className="text-xl font-bold text-primary mb-3">
+            <div className="glass-card rounded-xl p-4 sm:p-6 max-w-2xl mx-auto">
+              <h3 className="text-lg sm:text-xl font-bold text-primary mb-3">
                 Quer mais informações sobre as roupinhas?
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-4 text-sm sm:text-base">
                 Entre em contato conosco para conhecer mais modelos e cores disponíveis!
               </p>
               <a 
                 href="https://wa.me/5561999822328" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-accent inline-flex items-center gap-2"
+                className="btn-accent inline-flex items-center gap-2 text-sm sm:text-base px-4 sm:px-6"
               >
                 <img 
                   src="/whatsapp1.png" 
                   alt="WhatsApp" 
-                  className="h-5 w-5"
+                  className="h-4 w-4 sm:h-5 sm:w-5"
                 />
-                Ver Mais Modelos
+                <span className="hidden sm:inline">Ver Mais Modelos</span>
+                <span className="sm:hidden">Mais Modelos</span>
               </a>
             </div>
           </div>
