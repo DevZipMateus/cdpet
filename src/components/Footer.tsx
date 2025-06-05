@@ -39,15 +39,34 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4">Produtos</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li>• Rações Premium</li>
-              <li>• Petiscos e Ossos</li>
-              <li>• Brinquedos</li>
-              <li>• Acessórios</li>
-              <li>• Produtos de Higiene</li>
-              <li>• Medicamentos Veterinários</li>
-            </ul>
+            <h3 className="text-xl font-bold mb-4">Marcas Exclusivas</h3>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3">
+                <img 
+                  src="/lovable-uploads/0ffcd292-07d6-436b-b52a-7b9f1bb48112.png"
+                  alt="Dinâmica Vet"
+                  className="w-12 h-12 object-contain rounded bg-white p-1"
+                />
+                <div>
+                  <p className="text-sm font-medium text-white">Dinâmica Vet</p>
+                  <p className="text-xs text-gray-400">Saúde animal</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <img 
+                  src="/lovable-uploads/dc28fe92-88c7-4ce0-87ef-6a19c9b7ff09.png"
+                  alt="Boby Dog Cosméticos"
+                  className="w-12 h-12 object-contain rounded bg-white p-1"
+                />
+                <div>
+                  <p className="text-sm font-medium text-white">Boby Dog</p>
+                  <p className="text-xs text-gray-400">Cosméticos para pets</p>
+                </div>
+              </div>
+              <p className="text-xs text-orange-400 font-medium">
+                Exclusivo em Brasília!
+              </p>
+            </div>
           </div>
           
           <div>
