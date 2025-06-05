@@ -2,6 +2,7 @@
 import AnimatedSection from './AnimatedSection';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const ClothingSection = () => {
   const fleeceProducts = [
@@ -93,129 +94,137 @@ const ClothingSection = () => {
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
-          {/* Roupinhas Fleece */}
-          <AnimatedSection delay={200}>
-            <Card className="overflow-hidden">
-              <CardHeader className="pb-4">
-                <div className="aspect-video relative overflow-hidden rounded-lg mb-4">
-                  <img 
-                    src="/lovable-uploads/68486833-9c9e-4361-b194-673406a2c0d1.png"
-                    alt="Roupinhas em Tecido Fleece - Grade de Numerações e Medidas"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardTitle className="text-xl text-primary text-center">
-                  Roupinhas em Tecido Fleece - Microfibra
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="overflow-x-auto">
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead className="text-center">Número</TableHead>
-                        <TableHead className="text-center">Tamanho</TableHead>
-                        <TableHead className="text-center">Preço</TableHead>
-                        <TableHead className="text-center">Ação</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {fleeceProducts.map((product) => (
-                        <TableRow key={product.numero}>
-                          <TableCell className="text-center font-medium">
-                            Nº {product.numero}
-                          </TableCell>
-                          <TableCell className="text-center">
-                            {product.tamanho}
-                          </TableCell>
-                          <TableCell className="text-center font-bold text-accent">
-                            R$ {product.preco}
-                          </TableCell>
-                          <TableCell className="text-center">
-                            <button
-                              onClick={() => handleWhatsAppOrder("Roupinha Fleece", product.numero, product.preco)}
-                              className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-xs flex items-center gap-1 mx-auto"
-                            >
-                              <img 
-                                src="/whatsapp1.png" 
-                                alt="WhatsApp" 
-                                className="h-3 w-3"
-                              />
-                              Comprar
-                            </button>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </div>
-              </CardContent>
-            </Card>
-          </AnimatedSection>
+        {/* Roupinhas com Abas */}
+        <AnimatedSection delay={200}>
+          <div className="max-w-4xl mx-auto">
+            <Tabs defaultValue="fleece" className="w-full">
+              <TabsList className="grid w-full grid-cols-2 mb-8">
+                <TabsTrigger value="fleece">Roupinhas em Tecido Fleece</TabsTrigger>
+                <TabsTrigger value="ovelha">Roupinhas Ovelha - Premium</TabsTrigger>
+              </TabsList>
+              
+              <TabsContent value="fleece">
+                <Card className="overflow-hidden">
+                  <CardHeader className="pb-4">
+                    <div className="aspect-video relative overflow-hidden rounded-lg mb-4">
+                      <img 
+                        src="/lovable-uploads/68486833-9c9e-4361-b194-673406a2c0d1.png"
+                        alt="Roupinhas em Tecido Fleece - Grade de Numerações e Medidas"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardTitle className="text-xl text-primary text-center">
+                      Roupinhas em Tecido Fleece - Microfibra
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="overflow-x-auto">
+                      <Table>
+                        <TableHeader>
+                          <TableRow>
+                            <TableHead className="text-center">Número</TableHead>
+                            <TableHead className="text-center">Tamanho</TableHead>
+                            <TableHead className="text-center">Preço</TableHead>
+                            <TableHead className="text-center">Ação</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          {fleeceProducts.map((product) => (
+                            <TableRow key={product.numero}>
+                              <TableCell className="text-center font-medium">
+                                Nº {product.numero}
+                              </TableCell>
+                              <TableCell className="text-center">
+                                {product.tamanho}
+                              </TableCell>
+                              <TableCell className="text-center font-bold text-accent">
+                                R$ {product.preco}
+                              </TableCell>
+                              <TableCell className="text-center">
+                                <button
+                                  onClick={() => handleWhatsAppOrder("Roupinha Fleece", product.numero, product.preco)}
+                                  className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-xs flex items-center gap-1 mx-auto"
+                                >
+                                  <img 
+                                    src="/whatsapp1.png" 
+                                    alt="WhatsApp" 
+                                    className="h-3 w-3"
+                                  />
+                                  Comprar
+                                </button>
+                              </TableCell>
+                            </TableRow>
+                          ))}
+                        </TableBody>
+                      </Table>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              
+              <TabsContent value="ovelha">
+                <Card className="overflow-hidden">
+                  <CardHeader className="pb-4">
+                    <div className="aspect-video relative overflow-hidden rounded-lg mb-4">
+                      <img 
+                        src="/lovable-uploads/70350305-fcda-4426-adf2-cd5b34e3a9c2.png"
+                        alt="Roupinhas em Tecido Fleece - Microfibra Melhor que Soft"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardTitle className="text-xl text-primary text-center">
+                      Roupinhas Ovelha - Premium
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="overflow-x-auto">
+                      <Table>
+                        <TableHeader>
+                          <TableRow>
+                            <TableHead className="text-center">Número</TableHead>
+                            <TableHead className="text-center">Tamanho</TableHead>
+                            <TableHead className="text-center">Preço</TableHead>
+                            <TableHead className="text-center">Ação</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          {ovelhaProducts.map((product) => (
+                            <TableRow key={product.numero}>
+                              <TableCell className="text-center font-medium">
+                                Nº {product.numero}
+                              </TableCell>
+                              <TableCell className="text-center">
+                                {product.tamanho}
+                              </TableCell>
+                              <TableCell className="text-center font-bold text-accent">
+                                R$ {product.preco}
+                              </TableCell>
+                              <TableCell className="text-center">
+                                <button
+                                  onClick={() => handleWhatsAppOrder("Roupinha Ovelha", product.numero, product.preco)}
+                                  className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-xs flex items-center gap-1 mx-auto"
+                                >
+                                  <img 
+                                    src="/whatsapp1.png" 
+                                    alt="WhatsApp" 
+                                    className="h-3 w-3"
+                                  />
+                                  Comprar
+                                </button>
+                              </TableCell>
+                            </TableRow>
+                          ))}
+                        </TableBody>
+                      </Table>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            </Tabs>
+          </div>
+        </AnimatedSection>
 
-          {/* Roupinhas Ovelha */}
-          <AnimatedSection delay={400}>
-            <Card className="overflow-hidden">
-              <CardHeader className="pb-4">
-                <div className="aspect-video relative overflow-hidden rounded-lg mb-4">
-                  <img 
-                    src="/lovable-uploads/70350305-fcda-4426-adf2-cd5b34e3a9c2.png"
-                    alt="Roupinhas em Tecido Fleece - Microfibra Melhor que Soft"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardTitle className="text-xl text-primary text-center">
-                  Roupinhas Ovelha - Premium
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="overflow-x-auto">
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead className="text-center">Número</TableHead>
-                        <TableHead className="text-center">Tamanho</TableHead>
-                        <TableHead className="text-center">Preço</TableHead>
-                        <TableHead className="text-center">Ação</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {ovelhaProducts.map((product) => (
-                        <TableRow key={product.numero}>
-                          <TableCell className="text-center font-medium">
-                            Nº {product.numero}
-                          </TableCell>
-                          <TableCell className="text-center">
-                            {product.tamanho}
-                          </TableCell>
-                          <TableCell className="text-center font-bold text-accent">
-                            R$ {product.preco}
-                          </TableCell>
-                          <TableCell className="text-center">
-                            <button
-                              onClick={() => handleWhatsAppOrder("Roupinha Ovelha", product.numero, product.preco)}
-                              className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-xs flex items-center gap-1 mx-auto"
-                            >
-                              <img 
-                                src="/whatsapp1.png" 
-                                alt="WhatsApp" 
-                                className="h-3 w-3"
-                              />
-                              Comprar
-                            </button>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </div>
-              </CardContent>
-            </Card>
-          </AnimatedSection>
-        </div>
-
-        <AnimatedSection delay={600}>
+        <AnimatedSection delay={400}>
           <div className="mt-12 text-center">
             <div className="glass-card rounded-xl p-6 max-w-2xl mx-auto">
               <h3 className="text-xl font-bold text-primary mb-3">
