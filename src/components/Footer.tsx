@@ -41,62 +41,64 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Marcas Exclusivas</h3>
             <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <img 
-                  src="/lovable-uploads/0ffcd292-07d6-436b-b52a-7b9f1bb48112.png"
-                  alt="Dinâmica Vet"
-                  className="w-12 h-12 object-contain rounded bg-white p-1"
-                />
-                <div>
-                  <p className="text-sm font-medium text-white">Dinâmica Vet</p>
-                  <p className="text-xs text-gray-400">Saúde animal</p>
+              <div className="grid grid-cols-2 sm:grid-cols-1 gap-3">
+                <div className="flex items-center space-x-3">
+                  <img 
+                    src="/lovable-uploads/0ffcd292-07d6-436b-b52a-7b9f1bb48112.png"
+                    alt="Dinâmica Vet"
+                    className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded bg-white p-1 flex-shrink-0"
+                  />
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-white truncate">Dinâmica Vet</p>
+                    <p className="text-xs text-gray-400 truncate">Saúde animal</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <img 
+                    src="/lovable-uploads/dc28fe92-88c7-4ce0-87ef-6a19c9b7ff09.png"
+                    alt="Boby Dog Cosméticos"
+                    className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded bg-white p-1 flex-shrink-0"
+                  />
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-white truncate">Boby Dog</p>
+                    <p className="text-xs text-gray-400 truncate">Cosméticos para pets</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <img 
+                    src="/lovable-uploads/51f3f012-7bc6-43d3-a546-2c05e39606ce.png"
+                    alt="PROSS Professional"
+                    className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded bg-white p-1 flex-shrink-0"
+                  />
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-white truncate">PROSS</p>
+                    <p className="text-xs text-gray-400 truncate">Professional</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <img 
+                    src="/lovable-uploads/31da2b15-1fca-45de-9ed0-82d2871e8544.png"
+                    alt="LIFE Cosmético Animal"
+                    className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded bg-white p-1 flex-shrink-0"
+                  />
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-white truncate">LIFE</p>
+                    <p className="text-xs text-gray-400 truncate">Cosmético Animal</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3 col-span-2 sm:col-span-1">
+                  <img 
+                    src="/lovable-uploads/e7f1df0e-8a35-4428-b503-318c658f69d7.png"
+                    alt="LAVI PET"
+                    className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded bg-white p-1 flex-shrink-0"
+                  />
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-white truncate">LAVI PET</p>
+                    <p className="text-xs text-gray-400 truncate">Produtos para pets</p>
+                  </div>
                 </div>
               </div>
-              <div className="flex items-center space-x-3">
-                <img 
-                  src="/lovable-uploads/dc28fe92-88c7-4ce0-87ef-6a19c9b7ff09.png"
-                  alt="Boby Dog Cosméticos"
-                  className="w-12 h-12 object-contain rounded bg-white p-1"
-                />
-                <div>
-                  <p className="text-sm font-medium text-white">Boby Dog</p>
-                  <p className="text-xs text-gray-400">Cosméticos para pets</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <img 
-                  src="/lovable-uploads/51f3f012-7bc6-43d3-a546-2c05e39606ce.png"
-                  alt="PROSS Professional"
-                  className="w-12 h-12 object-contain rounded bg-white p-1"
-                />
-                <div>
-                  <p className="text-sm font-medium text-white">PROSS</p>
-                  <p className="text-xs text-gray-400">Professional</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <img 
-                  src="/lovable-uploads/31da2b15-1fca-45de-9ed0-82d2871e8544.png"
-                  alt="LIFE Cosmético Animal"
-                  className="w-12 h-12 object-contain rounded bg-white p-1"
-                />
-                <div>
-                  <p className="text-sm font-medium text-white">LIFE</p>
-                  <p className="text-xs text-gray-400">Cosmético Animal</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <img 
-                  src="/lovable-uploads/e7f1df0e-8a35-4428-b503-318c658f69d7.png"
-                  alt="LAVI PET"
-                  className="w-12 h-12 object-contain rounded bg-white p-1"
-                />
-                <div>
-                  <p className="text-sm font-medium text-white">LAVI PET</p>
-                  <p className="text-xs text-gray-400">Produtos para pets</p>
-                </div>
-              </div>
-              <p className="text-xs text-orange-400 font-medium">
+              <p className="text-xs text-orange-400 font-medium text-center sm:text-left">
                 Exclusivo em Brasília!
               </p>
             </div>
