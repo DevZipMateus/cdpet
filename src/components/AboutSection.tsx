@@ -1,7 +1,7 @@
 import { CheckCircle } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 const AboutSection = () => {
-  const features = ['Sem taxa mínima de trabalho', 'Sem compras altas ou casadas', 'Lucratividade acima de 120%', 'Preços competitivos de SP', 'Atendimento humanizado', 'Agilidade na entrega'];
+  const features = ['Sem taxa mínima de compra para CNPJ', 'Sem compras altas ou casadas', 'Lucratividade acima de 120%', 'Preços competitivos de SP', 'Atendimento humanizado', 'Agilidade na entrega'];
   return <section id="sobre" className="py-24 bg-white">
       <div className="section-container">
         <AnimatedSection>
