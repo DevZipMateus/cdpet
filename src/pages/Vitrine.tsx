@@ -9,8 +9,8 @@ const Vitrine = () => {
     document.body.style.overflow = "hidden";
     
     const calculateHeight = () => {
-      // Altura total - header (80px) - badge inferior (63px)
-      const height = window.innerHeight - 80 - 63;
+      // Altura total - header (80px)
+      const height = window.innerHeight - 80;
       setIframeHeight(height);
     };
 
@@ -35,9 +35,6 @@ const Vitrine = () => {
           title="Demonstração de Vitrine"
         />
       </main>
-      <div className="w-full" style={{ height: "63px" }}>
-        <div id="montesite-footer-badge"></div>
-      </div>
     </div>
   );
 };
