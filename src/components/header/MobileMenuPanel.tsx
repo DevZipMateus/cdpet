@@ -1,7 +1,7 @@
-
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MenuItem } from "./types";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 interface MobileMenuPanelProps {
   isMenuOpen: boolean;
@@ -10,6 +10,33 @@ interface MobileMenuPanelProps {
 }
 
 const MobileMenuPanel = ({ isMenuOpen, onClose, menuItems }: MobileMenuPanelProps) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    onClose();
+    
+    // Se for um link de âncora (#)
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      
+      // Se não estiver na página inicial, navegar primeiro para lá
+      if (location.pathname !== '/') {
+        navigate('/' + href);
+      } else {
+        // Se já estiver na página inicial, fazer scroll suave
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 70,
+            behavior: 'smooth'
+          });
+        }
+      }
+    }
+  };
+
   return (
     <div 
       className={cn(
@@ -41,15 +68,27 @@ const MobileMenuPanel = ({ isMenuOpen, onClose, menuItems }: MobileMenuPanelProp
         <ul className="space-y-5">
           {menuItems.map((item) => (
             <li key={item.name}>
-              <a
-                href={item.href}
-                className="text-xl font-medium text-gray-700 hover:text-primary transition-all duration-200 block py-2 
-                           hover:translate-x-1 hover:scale-[1.02] focus:outline-none focus:text-primary rounded-lg
-                           hover:bg-primary/5 px-3 -mx-3"
-                onClick={onClose}
-              >
-                {item.name}
-              </a>
+              {item.href.startsWith('/') ? (
+                <Link
+                  to={item.href}
+                  onClick={onClose}
+                  className="text-xl font-medium text-gray-700 hover:text-primary transition-all duration-200 block py-2 
+                             hover:translate-x-1 hover:scale-[1.02] focus:outline-none focus:text-primary rounded-lg
+                             hover:bg-primary/5 px-3 -mx-3"
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <a
+                  href={item.href}
+                  className="text-xl font-medium text-gray-700 hover:text-primary transition-all duration-200 block py-2 
+                             hover:translate-x-1 hover:scale-[1.02] focus:outline-none focus:text-primary rounded-lg
+                             hover:bg-primary/5 px-3 -mx-3"
+                  onClick={(e) => handleClick(e, item.href)}
+                >
+                  {item.name}
+                </a>
+              )}
             </li>
           ))}
         </ul>
