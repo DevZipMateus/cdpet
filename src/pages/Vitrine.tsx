@@ -14,19 +14,13 @@ const Vitrine = () => {
     calculateHeight();
     window.addEventListener("resize", calculateHeight);
 
-    // Travar scroll da página
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      window.removeEventListener("resize", calculateHeight);
-      document.body.style.overflow = "";
-    };
+    return () => window.removeEventListener("resize", calculateHeight);
   }, []);
 
   return (
     <div className="w-full h-screen overflow-hidden flex flex-col">
       <Header />
-      <main className="w-full pt-20" style={{ height: `calc(${iframeHeight}px + 80px)` }}>
+      <main className="w-full" style={{ height: `${iframeHeight}px` }}>
         <iframe
           src="https://cdpetcentro.egestor.com.br/vitrine/"
           className="w-full h-full"
@@ -34,7 +28,9 @@ const Vitrine = () => {
           title="Demonstração de Vitrine"
         />
       </main>
-      <div id="montesite-footer-badge" className="w-full" style={{ height: "63px" }}></div>
+      <div className="w-full" style={{ height: "63px" }}>
+        <div id="montesite-footer-badge"></div>
+      </div>
     </div>
   );
 };
