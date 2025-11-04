@@ -26,7 +26,7 @@ const Vitrine = () => {
   return (
     <div className="w-full h-screen overflow-hidden flex flex-col">
       <Header />
-      <main className="w-full" style={{ height: `${iframeHeight}px` }}>
+      <main className="w-full pt-20" style={{ height: `calc(${iframeHeight}px + 80px)` }}>
         <iframe
           src="https://cdpetcentro.egestor.com.br/vitrine/"
           className="w-full h-full"
