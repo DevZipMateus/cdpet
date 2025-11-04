@@ -23,7 +23,17 @@ const App = () => (
         </Routes>
       </BrowserRouter>
       <div className="fixed bottom-0 left-0 right-0 z-50">
-        <div id="montesite-footer-badge"></div>
+        <div id="montesite-footer-badge" className="bg-gradient-to-r from-purple-600 to-blue-600 py-2 px-4 flex items-center justify-center gap-2 text-white text-sm shadow-lg">
+          <span>Desenvolvido por</span>
+          <a 
+            href="https://montesite.com.br" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="font-bold hover:underline flex items-center gap-1"
+          >
+            MonteSite
+          </a>
+        </div>
       </div>
     </TooltipProvider>
   </QueryClientProvider>
