@@ -28,9 +28,7 @@ const Vitrine = () => {
           title="Demonstração de Vitrine"
         />
       </main>
-      <div className="w-full" style={{ height: "63px" }}>
-        <div id="montesite-footer-badge"></div>
-      </div>
+      <div id="montesite-footer-badge" className="w-full" style={{ height: "63px" }}></div>
     </div>
   );
 };
