@@ -14,6 +14,9 @@ import PartnersSection from '@/components/PartnersSection';
 
 const Index = () => {
   useEffect(() => {
+    // Trava o scroll da página
+    document.body.style.overflow = "hidden";
+    
     // Smooth scroll implementation with reduced offset for tighter sections
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -34,6 +37,7 @@ const Index = () => {
 
     // Clean up event listeners
     return () => {
+      document.body.style.overflow = "auto";
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.removeEventListener('click', function (e) {
           e.preventDefault();
@@ -43,7 +47,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen overflow-hidden [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
       <Header />
       <main className="flex-grow">
         <HeroSection />
