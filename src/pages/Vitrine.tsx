@@ -25,12 +25,12 @@ const Vitrine = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen overflow-hidden flex flex-col">
+    <div className="w-full h-screen overflow-hidden flex flex-col [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
       <Header />
-      <main className="w-full pt-20" style={{ height: `calc(${iframeHeight}px + 80px)` }}>
+      <main className="w-full pt-20 overflow-hidden" style={{ height: `calc(${iframeHeight}px + 80px)` }}>
         <iframe
           src="https://cdpetcentro.egestor.com.br/vitrine/"
-          className="w-full h-full"
+          className="w-full h-full overflow-hidden"
           style={{ border: "none" }}
           title="Demonstração de Vitrine"
         />
