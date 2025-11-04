@@ -22,6 +22,9 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <div className="fixed bottom-0 left-0 right-0 z-50">
+        <div id="montesite-footer-badge"></div>
+      </div>
     </TooltipProvider>
   </QueryClientProvider>
 );
