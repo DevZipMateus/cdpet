@@ -36,13 +36,13 @@ const Vitrine = () => {
       // Restaura o scroll ao sair da página
       document.body.style.overflow = "auto";
       
-      // Remove MonteSite script and badge
-      if (scriptRef.current && document.body.contains(scriptRef.current)) {
-        document.body.removeChild(scriptRef.current);
+      // Remove MonteSite script and badge safely
+      if (scriptRef.current?.parentNode) {
+        scriptRef.current.parentNode.removeChild(scriptRef.current);
       }
       const badgeDiv = document.getElementById('montesite-footer-badge');
-      if (badgeDiv && document.body.contains(badgeDiv)) {
-        document.body.removeChild(badgeDiv);
+      if (badgeDiv?.parentNode) {
+        badgeDiv.parentNode.removeChild(badgeDiv);
       }
     };
   }, []);
