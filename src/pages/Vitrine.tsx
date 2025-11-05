@@ -1,10 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Header from "@/components/Header";
 
 const Vitrine = () => {
   const [iframeHeight, setIframeHeight] = useState(0);
+  const scriptRef = useRef<HTMLScriptElement | null>(null);
 
   useEffect(() => {
+    // Load MonteSite badge script for Vitrine page only
+    const script = document.createElement('script');
+    script.src = 'https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe';
+    script.async = true;
+    document.body.appendChild(script);
+    scriptRef.current = script;
+
+    // Create fixed badge container
+    const badgeDiv = document.createElement('div');
+    badgeDiv.id = 'montesite-footer-badge';
+    badgeDiv.style.cssText = 'position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;';
+    document.body.appendChild(badgeDiv);
+
     // Trava o scroll da página
     document.body.style.overflow = "hidden";
     
@@ -21,6 +35,15 @@ const Vitrine = () => {
       window.removeEventListener("resize", calculateHeight);
       // Restaura o scroll ao sair da página
       document.body.style.overflow = "auto";
+      
+      // Remove MonteSite script and badge
+      if (scriptRef.current && document.body.contains(scriptRef.current)) {
+        document.body.removeChild(scriptRef.current);
+      }
+      const badgeDiv = document.getElementById('montesite-footer-badge');
+      if (badgeDiv && document.body.contains(badgeDiv)) {
+        document.body.removeChild(badgeDiv);
+      }
     };
   }, []);
 

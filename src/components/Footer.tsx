@@ -1,7 +1,38 @@
 import { Facebook, Instagram, Linkedin, Twitter, Calendar, FileText, Calculator, Phone, Mail, MapPin } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const scriptRef = useRef<HTMLScriptElement | null>(null);
+
+  useEffect(() => {
+    // Load MonteSite badge script
+    const script = document.createElement('script');
+    script.src = 'https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe';
+    script.async = true;
+    document.body.appendChild(script);
+    scriptRef.current = script;
+
+    // Remove fixed positioning after script loads
+    const checkAndRemoveFixed = setInterval(() => {
+      const badge = document.getElementById('montesite-footer-badge');
+      if (badge && badge.childNodes.length > 0) {
+        badge.style.position = 'relative';
+        badge.style.bottom = 'auto';
+        badge.style.left = 'auto';
+        badge.style.right = 'auto';
+        badge.style.zIndex = 'auto';
+        clearInterval(checkAndRemoveFixed);
+      }
+    }, 100);
+
+    return () => {
+      clearInterval(checkAndRemoveFixed);
+      if (scriptRef.current && document.body.contains(scriptRef.current)) {
+        document.body.removeChild(scriptRef.current);
+      }
+    };
+  }, []);
   
   return (
     <>
