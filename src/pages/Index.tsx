@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
@@ -13,6 +13,8 @@ import WhatsAppFloat from '@/components/WhatsAppFloat';
 import PartnersSection from '@/components/PartnersSection';
 
 const Index = () => {
+  const scriptRef = useRef<HTMLScriptElement | null>(null);
+
   useEffect(() => {
     // Trava o scroll da página
     document.body.style.overflow = "hidden";
@@ -35,7 +37,14 @@ const Index = () => {
       });
     });
 
-    // Clean up event listeners
+    // Load MonteSite badge script
+    const script = document.createElement('script');
+    script.src = 'https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe';
+    script.async = true;
+    document.body.appendChild(script);
+    scriptRef.current = script;
+
+    // Clean up event listeners and script
     return () => {
       document.body.style.overflow = "auto";
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -43,6 +52,9 @@ const Index = () => {
           e.preventDefault();
         });
       });
+      if (scriptRef.current) {
+        document.body.removeChild(scriptRef.current);
+      }
     };
   }, []);
 
@@ -62,6 +74,7 @@ const Index = () => {
       </main>
       <Footer />
       <WhatsAppFloat />
+      <div id="montesite-footer-badge" style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 9999 }}></div>
     </div>
   );
 };
