@@ -35,7 +35,6 @@ const Vitrine = () => {
           title="Demonstração de Vitrine"
         />
       </main>
-      <div id="montesite-footer-badge" style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 9999 }}></div>
     </div>
   );
 };
