@@ -1,25 +1,7 @@
-
 import { Facebook, Instagram, Linkedin, Twitter, Calendar, FileText, Calculator, Phone, Mail, MapPin } from 'lucide-react';
-import { useEffect, useRef } from 'react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const scriptRef = useRef<HTMLScriptElement | null>(null);
-
-  useEffect(() => {
-    // Load MonteSite badge script
-    const script = document.createElement('script');
-    script.src = 'https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe';
-    script.async = true;
-    document.body.appendChild(script);
-    scriptRef.current = script;
-
-    return () => {
-      if (scriptRef.current && document.body.contains(scriptRef.current)) {
-        document.body.removeChild(scriptRef.current);
-      }
-    };
-  }, []);
   
   return (
     <>
